@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://4wgt40dcxfbq"]
+
+[ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
+[ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_h7iqs")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_vasa2")
+centered = false
+
+[node name="Island" type="Sprite2D" parent="."]
+texture = ExtResource("2_h7iqs")
+centered = false
+
+[node name="BoatSpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BoatLeftLimit" type="Marker2D" parent="."]
+position = Vector2(368, 549)
+
+[node name="BoatRightLimit" type="Marker2D" parent="."]
+position = Vector2(774, 548)
+
+[connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]

@@ -1,0 +1,21 @@
+Objets libre dispo
+Objets à débloquer
+Objets qui ont un cout
+Bateau qui apportent de l'argent
+Physique sur les objets
+Le joueur clique sur un objet et paie le cout
+    Il ne peut poser l'objet quand s'il ne collisionne avec rien d'autre
+
+Quels batiments/objets ?
+1 Arbre
+1 maison
+1 usine
+1 bateau
+1 magasin
+1 grue
+1 église
+
+
+Bateau pirate sur lequels on peut drop des objets
+Bateau pirate qui donne des malus d'argent
+
