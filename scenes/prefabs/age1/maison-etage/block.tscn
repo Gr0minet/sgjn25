@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcem73ji3355r"]
+
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age1/maison2etage.png" id="2_qrafd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
+size = Vector2(472.98, 722.732)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
+size = Vector2(54.296, 720.521)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
+size = Vector2(472.688, 76.3057)
+
+[node name="Block" type="RigidBody2D"]
+collision_layer = 3
+script = ExtResource("1_ychud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+texture = ExtResource("2_qrafd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 26.5)
+scale = Vector2(0.45245, 0.45245)
+shape = SubResource("RectangleShape2D_e67gr")
+
+[node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+collision_layer = 3
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-182.82, 59.6751)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(183.446, 57.4649)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(0.146442, -263.592)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nsj6n")

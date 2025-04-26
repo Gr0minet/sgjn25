@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://drbeef2fmo33g"]
+
+[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
+[ext_resource type="PackedScene" uid="uid://dclnx6bpnb707" path="res://scenes/prefabs/block.tscn" id="2_x3t1k"]
+[ext_resource type="Texture2D" uid="uid://4m5j65a741v4" path="res://asset/sprites/age1/case.png" id="3_tdf18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
+size = Vector2(139.381, 176.991)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
+size = Vector2(151.735, 210.471)
+
+[node name="MovingBlock" type="Area2D"]
+modulate = Color(1, 1, 1, 0.505882)
+collision_layer = 3
+script = ExtResource("1_dp5hw")
+color_invalid = Color(0.7, 0.27335, 0.217, 1)
+color_valid = Color(0.58438, 0.553385, 0.976884, 1)
+instantiate_block = ExtResource("2_x3t1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 13)
+scale = Vector2(0.452, 0.452)
+shape = SubResource("RectangleShape2D_e67gr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.452, 0.452)
+texture = ExtResource("3_tdf18")
+
+[node name="InsideArea" type="Area2D" parent="."]
+scale = Vector2(0.452, 0.452)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
+position = Vector2(1.10619, 27.6548)
+scale = Vector2(0.452, 0.452)
+shape = SubResource("RectangleShape2D_5s5wv")

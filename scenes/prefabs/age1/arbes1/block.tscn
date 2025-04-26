@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs8t0jqip3ox0"]
+
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://dsim6ia7gi2jh" path="res://asset/sprites/age1/arbres1.png" id="2_wqomd"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_85ehv"]
+points = PackedVector2Array(-227.649, -250.856, -119.35, 250.856, 216.599, 248.646, 243.121, 27.6274, 101.669, -158.029, 39.7834, -250.856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
+size = Vector2(232.07, 48.6241)
+
+[node name="Block" type="RigidBody2D"]
+collision_layer = 3
+script = ExtResource("1_ychud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(0.45245, 0.45245)
+shape = SubResource("ConvexPolygonShape2D_85ehv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+texture = ExtResource("2_wqomd")
+
+[node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+collision_layer = 3
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-87.3025, -203.337)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nsj6n")

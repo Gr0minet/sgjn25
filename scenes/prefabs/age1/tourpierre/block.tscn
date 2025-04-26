@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cey7kuuy61s2g"]
+
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://coms53rxe2prx" path="res://asset/sprites/age1/tourpierre.png" id="2_hvac5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
+size = Vector2(234.28, 377.942)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
+size = Vector2(40.363, 373.672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
+size = Vector2(225.439, 70.726)
+
+[node name="Block" type="RigidBody2D"]
+collision_layer = 3
+script = ExtResource("1_ychud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+texture = ExtResource("2_hvac5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+scale = Vector2(0.45245, 0.45245)
+shape = SubResource("RectangleShape2D_e67gr")
+
+[node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+collision_layer = 3
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-81.777, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(92.8279, 3.8147e-06)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-2.2102, -152.503)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nsj6n")

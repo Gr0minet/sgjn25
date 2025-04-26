@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck7bs7dh3077i"]
+
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="2_w6qet"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_w6qet"]
+points = PackedVector2Array(521.605, 232.07, -426.566, 232.07, -831.031, -218.809, -145.872, -1155.93, 194.497, -1027.74, 594.541, -607.802, 616.643, -236.49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
+size = Vector2(79.1687, 396.122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mnwj"]
+size = Vector2(76.3056, 364.756)
+
+[node name="Block" type="RigidBody2D"]
+collision_layer = 3
+script = ExtResource("1_ychud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+texture = ExtResource("2_w6qet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46, 242)
+scale = Vector2(0.45245, 0.45245)
+shape = SubResource("ConvexPolygonShape2D_w6qet")
+
+[node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
+collision_layer = 3
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-386.783, 590.121)
+rotation = -0.671952
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(587.91, 580.212)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6mnwj")
