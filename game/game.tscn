@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://cripegxbvwyri" path="res://asset/fondile_nuages.png" id="2_qf6n1"]
 [ext_resource type="Texture2D" uid="uid://mkysv2orsvt0" path="res://asset/sea.png" id="3_y36n6"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
-[ext_resource type="Script" uid="uid://cjjc0uqrgwg1u" path="res://ui/scroll_container.gd" id="8_l8g03"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
@@ -21,13 +21,14 @@ size = Vector2(547, 178)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Middleground" type="Sprite2D" parent="."]
 z_index = -10
-texture = ExtResource("1_vasa2")
+texture = ExtResource("2_qf6n1")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="Sea" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(960, 1018)
 texture = ExtResource("3_y36n6")
 
@@ -112,20 +113,26 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "0 €"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UICanvasLayer/UI"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 150.0
-offset_bottom = -208.0
-grow_vertical = 2
-mouse_filter = 0
-script = ExtResource("8_l8g03")
-
-[node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI/ScrollContainer"]
+[node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI"]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="BlueprintContainer2" type="VBoxContainer" parent="UICanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
@@ -150,7 +157,7 @@ text = "Click to start"
 
 [node name="AgesMeter" type="Node2D" parent="."]
 z_index = -5
-position = Vector2(576, 556)
+position = Vector2(889, 940)
 script = ExtResource("21_mhvfb")
 bar_scene = ExtResource("21_dxwpq")
 ages_years = Array[String](["1700", "1800", "1900", "2000"])

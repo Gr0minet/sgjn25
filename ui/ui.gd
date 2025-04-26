@@ -9,7 +9,9 @@ const BLUEPRINT_SCENE: PackedScene = preload("uid://bi7q5vvl3qlba")
 
 @onready var _money_label: Label = %MoneyLabel
 @onready var _blueprint_container: VBoxContainer = %BlueprintContainer
+@onready var _blueprint_container_2: VBoxContainer = %BlueprintContainer2
 @onready var _start_label: Label = %StartLabel
+
 
 var _block_resource_list: Array = []
 
@@ -17,16 +19,14 @@ var _block_resource_list: Array = []
 func _ready() -> void:
 	_money_label.hide()
 	_blueprint_container.hide()
+	_blueprint_container_2.hide()
 	_start_label.show()
 	State.money_changed.connect(_on_money_changed)
+	State.update_age.connect(_update_age)
 	
 	_setup_block_resource_list()
-	
-	for block_resource: BlockResource in _block_resource_list[0]:
-		var blueprint: Blueprint = BLUEPRINT_SCENE.instantiate()
-		blueprint.clicked.connect(_on_blueprint_clicked)
-		_blueprint_container.add_child(blueprint)
-		blueprint.set_block_resource(block_resource)
+	_update_age(State.age)
+
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -44,6 +44,7 @@ func _gui_input(event: InputEvent) -> void:
 func _start_game() -> void:
 	_money_label.show()
 	_blueprint_container.show()
+	_blueprint_container_2.show()
 	_start_label.hide()
 	State.start_game()
 
@@ -70,3 +71,25 @@ func _setup_block_resource_list() -> void:
 			var block_resource: BlockResource = ResourceLoader.load(base_path + "/" + block_resource_file, "BlockResource")
 			age_block_list.append(block_resource)
 		_block_resource_list.append(age_block_list)
+
+
+func _add_blueprint_to(container: VBoxContainer, block_resource: BlockResource) -> void:
+	var blueprint: Blueprint = BLUEPRINT_SCENE.instantiate()
+	blueprint.clicked.connect(_on_blueprint_clicked)
+	container.add_child(blueprint)
+	blueprint.set_block_resource(block_resource)
+
+
+func _update_age(age: int) -> void:
+	if age >= _block_resource_list.size():
+		return
+	
+	for child: Node in _blueprint_container.get_children():
+		child.queue_free()
+	for child: Node in _blueprint_container_2.get_children():
+		child.queue_free()
+	
+	for block_resource: BlockResource in _block_resource_list[age].slice(0, _block_resource_list[0].size()/2):
+		_add_blueprint_to(_blueprint_container, block_resource)
+	for block_resource: BlockResource in _block_resource_list[age].slice(_block_resource_list[0].size()/2):
+		_add_blueprint_to(_blueprint_container_2, block_resource)
