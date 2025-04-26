@@ -9,15 +9,15 @@ signal leaved(side: Side)
 
 enum BoatState {ARRIVING, LEAVING, IDLE}
 
+const OFF_SCREEN_MARGIN: float = 50.0
 const PIRATE_SPRITE: Texture2D = preload("uid://b1j855d1pv3fp")
-const IDLE_TIME: float = 2.0 # second
+const IDLE_TIME: float = 1.0 # second
 const PIRATE_SPEED: float = 100.0 # pixel/second
 const NORMAL_SPEED: float = 300.0 # pixel/second
 const PIRATE_MALUS: int = 100 # euro
 
 @onready var _sprite_2d: Sprite2D = $Sprite2D
 @onready var _idle_timer: Timer = $IdleTimer
-@onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var _income_label: Label = $IncomeLabel
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _click_detector: Area2D = $ClickDetector
@@ -39,7 +39,6 @@ func _ready() -> void:
 		_sprite_2d.flip_h = true
 	_income_label.hide()
 	_state = BoatState.ARRIVING
-	_setup_visible_on_screen_notifier_2d()
 
 
 func _physics_process(delta: float) -> void:
@@ -49,15 +48,22 @@ func _physics_process(delta: float) -> void:
 	var speed: float = PIRATE_SPEED if pirate else NORMAL_SPEED
 	position.x += speed * delta * direction
 
-	if _state == BoatState.LEAVING:
-		return
-	
 	var sprite_width: float = _sprite_2d.texture.get_width() * _sprite_2d.scale.x
-	if (
-		direction == 1 and position.x + sprite_width/2 > x_limit
-		or direction == -1 and position.x - sprite_width/2 < x_limit
-	):
-		_dock()
+	if _state == BoatState.LEAVING:
+		if (
+			direction == 1 and position.x + sprite_width/2 > get_viewport_rect().end.x + OFF_SCREEN_MARGIN
+			or direction == -1 and position.x - sprite_width/2 < -OFF_SCREEN_MARGIN
+		):
+			leaved.emit(side)
+			queue_free()
+			set_physics_process(false)
+	
+	if _state == BoatState.ARRIVING:
+		if (
+			direction == 1 and position.x + sprite_width/2 > x_limit
+			or direction == -1 and position.x - sprite_width/2 < x_limit
+		):
+			_dock()
 
 
 func _on_idle_timer_timeout() -> void:
@@ -68,19 +74,6 @@ func _on_idle_timer_timeout() -> void:
 		direction = 1
 		_sprite_2d.flip_h = true
 	_state = BoatState.LEAVING
-
-
-func _setup_visible_on_screen_notifier_2d() -> void:
-	var sprite_size: Vector2 = _sprite_2d.texture.get_size()
-	_visible_on_screen_notifier_2d.rect = Rect2(
-		-sprite_size/2,
-		sprite_size
-	)
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	leaved.emit(side)
-	queue_free()
 
 
 func _dock() -> void:

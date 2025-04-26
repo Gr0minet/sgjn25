@@ -5,8 +5,8 @@ enum PlayState {IDLE, PLACING_BLUEPRINT}
 
 const PIRATE_PROBABILITY: int = 5 # 1/PIRATE_PROBABILITY of boats will be pirate
 const BOAT_INCOME: int = 100 # euro
-const BOAT_RESPAWN_TIME_MIN: float = 1.0 # seconds
-const BOAT_RESPAWN_TIME_MAX: float = 1.0 # seconds
+const BOAT_RESPAWN_TIME_MIN: float = 0.5 # seconds
+const BOAT_RESPAWN_TIME_MAX: float = 1.5 # seconds
 const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
 
 @onready var _boat_spawn_timer: Timer = $BoatSpawnTimer
@@ -33,16 +33,17 @@ func _ready() -> void:
 	ground_level = ground.get_height()
 
 
-func _spawn_boat(spawn_x_position: float, direction: int, pirate_boat: bool) -> void:
+func _spawn_boat(spawn_x_position: float, boat_side: Boat.Side, pirate_boat: bool) -> void:
 	var boat: Boat = _boat_scene.instantiate()
 	boat.position.y = _boat_left_limit.position.y
 	boat.position.x = spawn_x_position
-	boat.direction = direction
-	boat.side = Boat.Side.LEFT if direction == 1 else Boat.Side.RIGHT
+	boat.direction = 1 if boat_side == Boat.Side.LEFT else -1
+	boat.side = boat_side
 	boat.income = BOAT_INCOME
 	boat.pirate = pirate_boat
 	
-	if direction == 1:
+	print(boat.direction, ", ", boat.side)
+	if boat_side == Boat.Side.LEFT:
 		boat.x_limit = _boat_left_limit.position.x
 	else:
 		boat.x_limit = _boat_right_limit.position.x
@@ -63,18 +64,18 @@ func _get_boat_respawn_time() -> float:
 
 
 func _on_boat_spawn_timer_timeout() -> void:
-	var direction: int
+	var boat_side: int
 	var spawn_x_position: float
 	
 	if not _left_boat_spawned and not _right_boat_spawned:
-		direction = 1 if randi() % 2 else -1
+		boat_side = Boat.Side.LEFT if randi() % 2 else Boat.Side.RIGHT
 		_boat_spawn_timer.start(_get_boat_respawn_time())
 	elif not _left_boat_spawned:
-		direction = 1
+		boat_side = Boat.Side.LEFT
 	else:
-		direction = -1
+		boat_side = Boat.Side.RIGHT
 	
-	if direction == 1:
+	if boat_side == Boat.Side.LEFT:
 		spawn_x_position = -BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
 		_left_boat_spawned = true
 	else:
@@ -82,7 +83,7 @@ func _on_boat_spawn_timer_timeout() -> void:
 		_right_boat_spawned = true
 	
 	var pirate_boat: bool = randi() % PIRATE_PROBABILITY == 0
-	_spawn_boat(spawn_x_position, direction, pirate_boat)
+	_spawn_boat(spawn_x_position, boat_side, pirate_boat)
 
 
 func _on_boat_docked(pirate: bool, amount: int) -> void:
