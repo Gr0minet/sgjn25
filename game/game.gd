@@ -19,14 +19,14 @@ const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
 var _boat_scene: PackedScene = preload("uid://cimhmw5jvbwbx")
 var _left_boat_spawned: bool = false
 var _right_boat_spawned: bool = false
-var _money: int = 0
 var _play_state: PlayState = PlayState.IDLE
+var _current_blueprint_price: int = 0
 
 var ground_level := 0.0
 
 
 func _ready() -> void:
-	_money = 0
+	State.money = 0
 	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
 	_blocks_builder.connect("block_placed", _on_block_placed)
 	_ui.game_started.connect(_on_game_started)
@@ -81,9 +81,8 @@ func _on_boat_spawn_timer_timeout() -> void:
 
 
 func _on_boat_docked(amount: int) -> void:
-	_money += amount
+	State.money += amount
 	income_received.emit(amount)
-	_ui.set_money_label(_money)
 
 
 func _on_boat_leaved(direction: int) -> void:
@@ -94,12 +93,12 @@ func _on_boat_leaved(direction: int) -> void:
 	_boat_spawn_timer.start(_get_boat_respawn_time())
 
 
-func _on_blueprint_clicked(moving_block_scene: PackedScene) -> void:
+func _on_blueprint_clicked(block_resource: BlockResource) -> void:
 	if _play_state != PlayState.IDLE:
 		return
 	
 	_play_state = PlayState.PLACING_BLUEPRINT
-	var moving_block: MovingBlock = moving_block_scene.instantiate()
+	var moving_block: MovingBlock = block_resource.moving_block_scene.instantiate()
 	moving_block.canceled.connect(_on_moving_block_canceled)
 	moving_block.place_block.connect(_blocks_builder.on_place_block)
 	add_child(moving_block)
@@ -109,11 +108,13 @@ func _on_moving_block_canceled() -> void:
 	_play_state = PlayState.IDLE
 
 func _on_block_placed(block: Block) -> void:
+	State.money -= _current_blueprint_price
 	_play_state = PlayState.IDLE
 	
 	var block_height := absf(ground_level - block.get_height())
 	if block_height > State.height_reached:
 		State.set_height_reached(block_height)
+
 
 func _on_game_started() -> void:
 	_boat_spawn_timer.start(_get_boat_respawn_time())

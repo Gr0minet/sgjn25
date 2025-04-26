@@ -1,27 +1,13 @@
-@tool
 class_name Blueprint
 extends VBoxContainer
 
 
-signal clicked(moving_block_scene: PackedScene)
+signal clicked(block_resource: BlockResource)
 
-@export var moving_block_scene: PackedScene = preload("uid://5011xni60ds6")
-@export var sprite: Texture2D:
-	set(value):
-		if not is_node_ready():
-			await ready
-		sprite = value
-		_texture_rect.texture = sprite
-@export var price: int = 100: # euro
-	set(value):
-		if not is_node_ready():
-			await ready
-		price = value
-		_label.text = str(price) + "€"	
-
-@onready var _label: Label = $Label
+@onready var _price_label: Label = $PriceLabel
 @onready var _texture_rect: TextureRect = $TextureRect
 
+var _block_resource: BlockResource
 
 func _gui_input(event: InputEvent) -> void:
 	if (
@@ -29,4 +15,10 @@ func _gui_input(event: InputEvent) -> void:
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
 		and (event as InputEventMouseButton).pressed
 	):
-		clicked.emit(moving_block_scene)
+		clicked.emit(_block_resource)
+
+
+func set_block_resource(block_resource: BlockResource) -> void:
+	_block_resource = block_resource
+	_price_label.text = str(block_resource.price) + "€"
+	_texture_rect.texture = block_resource.sprite

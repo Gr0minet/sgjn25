@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=4 format=3 uid="uid://bxeuvwdidtk7w"]
+
+[ext_resource type="PackedScene" uid="uid://b8lsddu25w7xt" path="res://scenes/prefabs/age1/pontpierre/moving_block.tscn" id="1_4fnsi"]
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_c0gp0"]
+[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age1/pontpierre.png" id="2_d5fy5"]
+
+[resource]
+script = ExtResource("1_c0gp0")
+price = 100
+sprite = ExtResource("2_d5fy5")
+moving_block_scene = ExtResource("1_4fnsi")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

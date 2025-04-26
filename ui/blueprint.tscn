@@ -13,7 +13,7 @@ texture = ExtResource("2_qck6y")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
+[node name="PriceLabel" type="Label" parent="."]
 layout_mode = 2
 text = "100€"
 horizontal_alignment = 1

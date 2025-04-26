@@ -1,24 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=10 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
-[ext_resource type="PackedScene" path="res://ui/blueprint.tscn" id="5_dxrkv"]
-[ext_resource type="Script" path="res://game/scrolling_camera.gd" id="5_u8s88"]
-[ext_resource type="Texture2D" uid="uid://dsim6ia7gi2jh" path="res://asset/sprites/age1/arbres1.png" id="6_dakft"]
-[ext_resource type="Texture2D" uid="uid://bjjfgh36vniuj" path="res://asset/sprites/age1/atelier.png" id="7_y36n6"]
-[ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="8_l8g03"]
-[ext_resource type="Texture2D" uid="uid://4m5j65a741v4" path="res://asset/sprites/age1/case.png" id="9_l8g03"]
-[ext_resource type="Texture2D" uid="uid://dfiqppb0hv56r" path="res://asset/sprites/age1/casegrande.png" id="10_j8tme"]
-[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age1/maison2etage.png" id="11_3vho3"]
-[ext_resource type="Texture2D" uid="uid://vknoir31rna2" path="res://asset/sprites/age1/maison.png" id="12_4cobl"]
-[ext_resource type="Texture2D" uid="uid://b1j855d1pv3fp" path="res://asset/sprites/age1/pirate1.png" id="13_ln7ps"]
-[ext_resource type="Texture2D" uid="uid://dnsyau38crfly" path="res://asset/sprites/age1/ponton.png" id="14_pxxsx"]
-[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age1/pontpierre.png" id="15_u8s88"]
-[ext_resource type="Texture2D" uid="uid://b1bfivqt1b3qj" path="res://asset/sprites/age1/reservoir.png" id="16_dxwpq"]
-[ext_resource type="Texture2D" uid="uid://coms53rxe2prx" path="res://asset/sprites/age1/tourpierre.png" id="17_mhvfb"]
+[ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakft"]
@@ -117,54 +104,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-
-[node name="Blueprint" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("6_dakft")
-
-[node name="Blueprint3" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("7_y36n6")
-
-[node name="Blueprint4" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("8_l8g03")
-
-[node name="Blueprint5" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("9_l8g03")
-
-[node name="Blueprint6" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("10_j8tme")
-
-[node name="Blueprint7" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("11_3vho3")
-
-[node name="Blueprint8" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("12_4cobl")
-
-[node name="Blueprint9" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("13_ln7ps")
-
-[node name="Blueprint10" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("14_pxxsx")
-
-[node name="Blueprint11" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("15_u8s88")
-
-[node name="Blueprint12" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("16_dxwpq")
-
-[node name="Blueprint13" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
-layout_mode = 2
-sprite = ExtResource("17_mhvfb")
 
 [node name="StartLabel" type="Label" parent="UICanvasLayer/UI"]
 unique_name_in_owner = true

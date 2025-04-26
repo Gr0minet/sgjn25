@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=3 format=3 uid="uid://ctwp3tf3ub1rn"]
+
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_0yctl"]
+[ext_resource type="Texture2D" uid="uid://cbwtpt6qqacgf" path="res://asset/sprites/age1/colonne.png" id="2_ucn3s"]
+
+[resource]
+script = ExtResource("1_0yctl")
+price = 0
+sprite = ExtResource("2_ucn3s")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

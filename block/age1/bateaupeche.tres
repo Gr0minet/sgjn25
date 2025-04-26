@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=3 format=3 uid="uid://dsr08xw8ajrot"]
+
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_npa8q"]
+[ext_resource type="Texture2D" uid="uid://e15hklfo04fj" path="res://asset/sprites/age1/bateaupeche.png" id="2_h543e"]
+
+[resource]
+script = ExtResource("1_npa8q")
+price = 100
+sprite = ExtResource("2_h543e")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"
