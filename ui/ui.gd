@@ -4,15 +4,11 @@ extends Control
 
 signal game_started()
 
-enum State {MAIN_MENU, GAME_STARTED}
-
 signal blueprint_clicked(moving_block_scene: PackedScene)
 
 @onready var _money_label: Label = %MoneyLabel
 @onready var _blueprint_container: VBoxContainer = %BlueprintContainer
 @onready var _start_label: Label = %StartLabel
-
-var _state: State = State.MAIN_MENU
 
 
 func _ready() -> void:
@@ -25,7 +21,7 @@ func _ready() -> void:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if _state != State.MAIN_MENU:
+	if State.current != State.Value.MAIN_MENU:
 		return
 	
 	if (
@@ -40,7 +36,7 @@ func _start_game() -> void:
 	_money_label.show()
 	_blueprint_container.show()
 	_start_label.hide()
-	_state = State.GAME_STARTED
+	State.current = State.Value.PLAYING
 	game_started.emit()
 
 

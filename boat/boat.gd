@@ -4,7 +4,7 @@ extends Node2D
 signal docked(income: int)
 signal leaved(direction: int)
 
-enum State {ARRIVING, LEAVING, IDLE}
+enum BoatState {ARRIVING, LEAVING, IDLE}
 
 const IDLE_TIME: float = 2.0 # second
 const SPEED: float = 300.0 # pixel/second
@@ -19,24 +19,24 @@ var direction: int
 var x_limit: float
 var income: int
 
-var _state: State = State.ARRIVING
+var _state: BoatState = BoatState.ARRIVING
 
 
 func _ready() -> void:
 	if direction == 1:
 		_sprite_2d.flip_h = true
 	_income_label.hide()
-	_state = State.ARRIVING
+	_state = BoatState.ARRIVING
 	_setup_visible_on_screen_notifier_2d()
 
 
 func _physics_process(delta: float) -> void:
-	if _state == State.IDLE:
+	if _state == BoatState.IDLE:
 		return
 		
 	position.x += SPEED * delta * direction
 
-	if _state == State.LEAVING:
+	if _state == BoatState.LEAVING:
 		return
 	
 	var sprite_width: float = _sprite_2d.texture.get_width() * _sprite_2d.scale.x
@@ -54,7 +54,7 @@ func _on_idle_timer_timeout() -> void:
 	else:
 		direction = 1
 		_sprite_2d.flip_h = true
-	_state = State.LEAVING
+	_state = BoatState.LEAVING
 
 
 func _setup_visible_on_screen_notifier_2d() -> void:
@@ -75,5 +75,5 @@ func _dock() -> void:
 	_animation_player.play("get_income")
 	docked.emit(income)
 	
-	_state = State.IDLE
+	_state = BoatState.IDLE
 	_idle_timer.start(IDLE_TIME)

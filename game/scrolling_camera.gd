@@ -13,12 +13,15 @@ var _max_position: float = 0
 
 
 func _process(delta: float) -> void:
+	if State.current != State.Value.PLAYING:
+		return
+	
 	var direction: int = 0
 	
 	var mouse_position: Vector2 = get_viewport().get_mouse_position()
-	if mouse_position.y < SCROLL_TRIGGER_MARGIN:
+	if mouse_position.y > 0 and mouse_position.y < SCROLL_TRIGGER_MARGIN:
 		direction = -1
-	elif mouse_position.y > get_viewport_rect().end.y - SCROLL_TRIGGER_MARGIN:
+	elif mouse_position.y < get_viewport_rect().end.y and mouse_position.y > get_viewport_rect().end.y - SCROLL_TRIGGER_MARGIN:
 		direction = 1
 	else:
 		return
