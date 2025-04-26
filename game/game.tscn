@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=15 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
+[ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
@@ -170,5 +171,7 @@ offset_bottom = -24.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 46
 text = "1700"
+
+[node name="MusicManager" parent="." instance=ExtResource("10_j8tme")]
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]

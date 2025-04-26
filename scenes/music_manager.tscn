@@ -1,0 +1,71 @@
+[gd_scene load_steps=19 format=3 uid="uid://b5s30hn4t45g1"]
+
+[ext_resource type="Script" uid="uid://do0otqj4ol8m6" path="res://scripts/music_manager.gd" id="1_tn5dr"]
+[ext_resource type="Script" uid="uid://blgus00hdalsd" path="res://scripts/music_layer.gd" id="2_jbem4"]
+[ext_resource type="AudioStream" uid="uid://vxy5k53xa7vh" path="res://asset/music/1234PianoChords_8+1_96.ogg" id="2_xcw26"]
+[ext_resource type="AudioStream" uid="uid://be6vcnmd5n7ct" path="res://asset/music/234SynthPad_8+1_96.ogg" id="3_jbem4"]
+[ext_resource type="AudioStream" uid="uid://dg7bxfm5mgux2" path="res://asset/music/34SubBass_8+1_96.ogg" id="4_hu6vc"]
+[ext_resource type="AudioStream" uid="uid://b2p8j3h8xrone" path="res://asset/music/4ChromaArp_8+1_96.ogg" id="5_p07gy"]
+[ext_resource type="AudioStream" uid="uid://2yk3oy62o68f" path="res://asset/music/234PianoOstinato_8+1_96.ogg" id="6_r5t12"]
+[ext_resource type="AudioStream" uid="uid://b00lcuds38kah" path="res://asset/music/234Perc_8+1_96.ogg" id="7_l62sp"]
+[ext_resource type="AudioStream" uid="uid://b5pypi8xw0l0n" path="res://asset/music/234LowPerc_8+1_96.ogg" id="8_oxtdo"]
+[ext_resource type="AudioStream" uid="uid://c4edmhkkeho21" path="res://asset/music/34BassDrum_8+1_96.ogg" id="10_gbh8o"]
+[ext_resource type="AudioStream" uid="uid://c4fgnh7ysffd6" path="res://asset/music/34ArpRythm_8+1_96.ogg" id="11_smbxl"]
+[ext_resource type="AudioStream" uid="uid://cawgbbsjgoxau" path="res://asset/music/4PhasePlantPerc_8+1_96.ogg" id="12_trwbn"]
+[ext_resource type="AudioStream" uid="uid://vcnbw6d4pm18" path="res://asset/music/4ExtraDrums_8+1_96.ogg" id="13_8rps1"]
+
+[sub_resource type="Resource" id="Resource_hu6vc"]
+script = ExtResource("2_jbem4")
+from = 0
+nb = 1
+metadata/_custom_type_script = "uid://blgus00hdalsd"
+
+[sub_resource type="Resource" id="Resource_p07gy"]
+script = ExtResource("2_jbem4")
+from = 1
+nb = 4
+metadata/_custom_type_script = "uid://blgus00hdalsd"
+
+[sub_resource type="Resource" id="Resource_fb0y8"]
+script = ExtResource("2_jbem4")
+from = 5
+nb = 3
+metadata/_custom_type_script = "uid://blgus00hdalsd"
+
+[sub_resource type="Resource" id="Resource_fkbch"]
+script = ExtResource("2_jbem4")
+from = 8
+nb = 3
+metadata/_custom_type_script = "uid://blgus00hdalsd"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_hetdf"]
+stream_count = 11
+stream_0/stream = ExtResource("2_xcw26")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_jbem4")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("6_r5t12")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("7_l62sp")
+stream_3/volume = 0.0
+stream_4/stream = ExtResource("8_oxtdo")
+stream_4/volume = 0.0
+stream_5/stream = ExtResource("4_hu6vc")
+stream_5/volume = 0.0
+stream_6/stream = ExtResource("10_gbh8o")
+stream_6/volume = 0.0
+stream_7/stream = ExtResource("11_smbxl")
+stream_7/volume = 0.0
+stream_8/stream = ExtResource("12_trwbn")
+stream_8/volume = 0.0
+stream_9/stream = ExtResource("13_8rps1")
+stream_9/volume = 0.0
+stream_10/stream = ExtResource("5_p07gy")
+stream_10/volume = 0.0
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_tn5dr")
+layers = Array[ExtResource("2_jbem4")]([SubResource("Resource_hu6vc"), SubResource("Resource_p07gy"), SubResource("Resource_fb0y8"), SubResource("Resource_fkbch")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_hetdf")
