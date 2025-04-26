@@ -17,12 +17,15 @@ script = ExtResource("1_ychud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
+scale = Vector2(0.45245, 0.45245)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
 texture = ExtResource("1_e67gr")
 
 [node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(0.45245, 0.45245)
 collision_layer = 2
 collision_mask = 2
 monitoring = false

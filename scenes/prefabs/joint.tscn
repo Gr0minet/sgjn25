@@ -7,7 +7,5 @@ softness = 1.32
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.760615, 0.918898, 0.346387, 1)
-show_behind_parent = true
-top_level = true
-scale = Vector2(0.298013, 0.298013)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_p10ac")

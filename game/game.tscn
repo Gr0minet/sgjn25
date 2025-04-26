@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=10 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
-[ext_resource type="PackedScene" uid="uid://bi7q5vvl3qlba" path="res://ui/blueprint.tscn" id="5_dxrkv"]
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
+[ext_resource type="PackedScene" path="res://ui/blueprint.tscn" id="5_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="6_dakft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dakft"]
+size = Vector2(322, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5opy"]
+size = Vector2(344, 124)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -16,6 +24,21 @@ centered = false
 [node name="Island" type="Sprite2D" parent="."]
 texture = ExtResource("2_h7iqs")
 centered = false
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(568, 556)
+script = ExtResource("4_u5opy")
+
+[node name="BuildableFloor" type="Area2D" parent="Ground"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BuildableFloor"]
+position = Vector2(-2, -20)
+shape = SubResource("RectangleShape2D_dakft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(5, 26)
+shape = SubResource("RectangleShape2D_u5opy")
 
 [node name="BoatSpawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -89,5 +112,7 @@ layout_mode = 2
 
 [node name="Blueprint7" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
 layout_mode = 2
+
+[node name="BlocksBuilder" parent="." instance=ExtResource("6_dakft")]
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]

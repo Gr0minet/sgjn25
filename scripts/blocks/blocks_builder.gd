@@ -2,9 +2,9 @@ extends Node2D
 class_name BlocksBuilder
 
 @export var joint_scene: PackedScene
-@export var blocks_parent: Node
 
 @onready var joints_stacks: Node2D = $Joints
+@onready var blocks_parent: Node = $Blocks
 
 func on_place_block(from: MovingBlock) -> void:
 	var position = from.global_position

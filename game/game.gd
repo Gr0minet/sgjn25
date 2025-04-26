@@ -14,6 +14,7 @@ const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
 @onready var _boat_spawn_timer: Timer = $BoatSpawnTimer
 @onready var _boat_left_limit: Marker2D = $BoatLeftLimit
 @onready var _boat_right_limit: Marker2D = $BoatRightLimit
+@onready var _blocks_builder: BlocksBuilder = $BlocksBuilder
 @onready var _ui: UI = $UICanvasLayer/UI
 
 var _boat_scene: PackedScene = preload("uid://cimhmw5jvbwbx")
@@ -96,6 +97,7 @@ func _on_blueprint_clicked(moving_block_scene: PackedScene) -> void:
 	_state = State.PLACING_BLUEPRINT
 	var moving_block: MovingBlock = moving_block_scene.instantiate()
 	moving_block.canceled.connect(_on_moving_block_canceled)
+	moving_block.place_block.connect(_blocks_builder.on_place_block)
 	add_child(moving_block)
 
 
