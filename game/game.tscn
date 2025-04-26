@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
-[ext_resource type="PackedScene" uid="uid://bi7q5vvl3qlba" path="res://ui/blueprint.tscn" id="5_dxrkv"]
-[ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
+[ext_resource type="PackedScene" path="res://ui/blueprint.tscn" id="5_dxrkv"]
+[ext_resource type="Script" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="Texture2D" uid="uid://dsim6ia7gi2jh" path="res://asset/sprites/age1/arbres1.png" id="6_dakft"]
 [ext_resource type="Texture2D" uid="uid://bjjfgh36vniuj" path="res://asset/sprites/age1/atelier.png" id="7_y36n6"]
 [ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="8_l8g03"]
@@ -43,6 +43,7 @@ position = Vector2(568, 556)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("4_u5opy")
+is_static = true
 
 [node name="BuildableFloor" type="Area2D" parent="Ground"]
 monitoring = false
