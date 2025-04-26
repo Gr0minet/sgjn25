@@ -108,8 +108,8 @@ func _on_blueprint_clicked(block_resource: BlockResource) -> void:
 func _on_moving_block_canceled() -> void:
 	_play_state = PlayState.IDLE
 
-func _on_block_placed(block: Block) -> void:
-	State.money -= _current_blueprint_price
+func _on_block_placed(price: int, block: Block) -> void:
+	State.money -= price
 	_play_state = PlayState.IDLE
 	
 	var block_height := absf(ground_level - block.get_height())

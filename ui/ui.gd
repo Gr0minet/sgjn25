@@ -76,8 +76,8 @@ func _setup_block_resource_list() -> void:
 func _add_blueprint_to(container: VBoxContainer, block_resource: BlockResource) -> void:
 	var blueprint: Blueprint = BLUEPRINT_SCENE.instantiate()
 	blueprint.clicked.connect(_on_blueprint_clicked)
-	container.add_child(blueprint)
 	blueprint.set_block_resource(block_resource)
+	container.add_child(blueprint)
 
 
 func _update_age(age: int) -> void:

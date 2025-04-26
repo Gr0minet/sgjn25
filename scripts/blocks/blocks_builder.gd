@@ -1,7 +1,7 @@
 extends Node2D
 class_name BlocksBuilder
 
-signal block_placed(block: Block)
+signal block_placed(price: int, block: Block)
 
 @export var joint_scene: PackedScene
 
@@ -25,8 +25,9 @@ func on_place_block(from: MovingBlock) -> void:
 		joints_stacks.add_child(joint)
 		
 	from.queue_free()
-	block_placed.emit(new_block)
-	
+	block_placed.emit(from.block_resource.price, new_block)
+
+
 func get_intersection(moving: MovingBlock, block: Block) -> PackedVector2Array:
 	var moving_transform = moving.get_global_transform()
 	var block_transform = block.get_global_transform()
