@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cimhmw5jvbwbx"]
+[gd_scene load_steps=8 format=3 uid="uid://cimhmw5jvbwbx"]
 
 [ext_resource type="Script" uid="uid://c8rypokjr24ok" path="res://boat/boat.gd" id="1_enlnh"]
 [ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="2_enlnh"]
@@ -40,6 +40,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_enlnh"]
@@ -83,11 +95,30 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_vvssr"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 3.6, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 200)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvssr"]
 _data = {
 &"RESET": SubResource("Animation_ml88t"),
+&"die": SubResource("Animation_vvssr"),
 &"get_income": SubResource("Animation_enlnh")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enlnh"]
+size = Vector2(148, 154)
 
 [node name="Boat" type="Node2D"]
 z_index = 4
@@ -117,5 +148,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_vvssr")
 }
 
+[node name="ClickDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickDetector"]
+shape = SubResource("RectangleShape2D_enlnh")
+
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="input_event" from="ClickDetector" to="." method="_on_area_2d_input_event"]

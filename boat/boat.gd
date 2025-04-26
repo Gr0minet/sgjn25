@@ -1,28 +1,40 @@
 class_name Boat
 extends Node2D
 
-signal docked(income: int)
-signal leaved(direction: int)
+
+enum Side {RIGHT, LEFT}
+
+signal docked(pirate: bool, income: int)
+signal leaved(side: Side)
 
 enum BoatState {ARRIVING, LEAVING, IDLE}
 
+const PIRATE_SPIRTE: Texture2D = preload("uid://b1j855d1pv3fp")
 const IDLE_TIME: float = 2.0 # second
-const SPEED: float = 300.0 # pixel/second
+const PIRATE_SPEED: float = 100.0 # pixel/second
+const NORMAL_SPEED: float = 300.0 # pixel/second
+const PIRATE_MALUS: int = 100 # euro
 
 @onready var _sprite_2d: Sprite2D = $Sprite2D
 @onready var _idle_timer: Timer = $IdleTimer
 @onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var _income_label: Label = $IncomeLabel
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _click_detector: Area2D = $ClickDetector
 
 var direction: int
 var x_limit: float
 var income: int
+var pirate: bool
+var side: Boat.Side
 
 var _state: BoatState = BoatState.ARRIVING
 
 
 func _ready() -> void:
+	if pirate:
+		_sprite_2d.texture = PIRATE_SPIRTE
+		modulate = Color.DARK_RED
 	if direction == 1:
 		_sprite_2d.flip_h = true
 	_income_label.hide()
@@ -34,7 +46,8 @@ func _physics_process(delta: float) -> void:
 	if _state == BoatState.IDLE:
 		return
 		
-	position.x += SPEED * delta * direction
+	var speed: float = PIRATE_SPEED if pirate else NORMAL_SPEED
+	position.x += speed * delta * direction
 
 	if _state == BoatState.LEAVING:
 		return
@@ -66,14 +79,31 @@ func _setup_visible_on_screen_notifier_2d() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	leaved.emit(direction)
+	leaved.emit(side)
 	queue_free()
 
 
 func _dock() -> void:
-	_income_label.text = str(income) + " €"
-	_animation_player.play("get_income")
-	docked.emit(income)
+	if pirate:
+		docked.emit(pirate, PIRATE_MALUS)
+	else:
+		_income_label.text = str(income) + " €"
+		_animation_player.play("get_income")
+		docked.emit(pirate, income)
 	
 	_state = BoatState.IDLE
 	_idle_timer.start(IDLE_TIME)
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if (
+		event is InputEventMouseButton
+		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
+		and (event as InputEventMouseButton).pressed
+	):
+		set_physics_process(false)
+		_click_detector.input_pickable = false
+		_animation_player.play("die")
+		await _animation_player.animation_finished
+		leaved.emit(side)
+		queue_free()

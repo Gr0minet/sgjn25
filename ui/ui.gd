@@ -11,6 +11,8 @@ const BLUEPRINT_SCENE: PackedScene = preload("uid://bi7q5vvl3qlba")
 @onready var _blueprint_container: VBoxContainer = %BlueprintContainer
 @onready var _blueprint_container_2: VBoxContainer = %BlueprintContainer2
 @onready var _start_label: Label = %StartLabel
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
+@onready var _money_malus: Label = %MoneyMalus
 
 
 var _block_resource_list: Array = []
@@ -23,6 +25,7 @@ func _ready() -> void:
 	_start_label.show()
 	State.money_changed.connect(_on_money_changed)
 	State.update_age.connect(_update_age)
+	State.pirated.connect(_on_pirated)
 	
 	_setup_block_resource_list()
 	_update_age(State.age)
@@ -93,3 +96,8 @@ func _update_age(age: int) -> void:
 		_add_blueprint_to(_blueprint_container, block_resource)
 	for block_resource: BlockResource in _block_resource_list[age].slice(_block_resource_list[0].size()/2):
 		_add_blueprint_to(_blueprint_container_2, block_resource)
+
+
+func _on_pirated(amount: int) -> void:
+	_money_malus.text = "-" + str(amount)
+	_animation_player.play("pirated")

@@ -1,10 +1,9 @@
 class_name Game
 extends Node2D
 
-signal income_received(amount: int)
-
 enum PlayState {IDLE, PLACING_BLUEPRINT}
 
+const PIRATE_PROBABILITY: int = 2 # 1/PIRATE_PROBABILITY of boats will be pirate
 const BOAT_INCOME: int = 100 # euro
 const BOAT_RESPAWN_TIME_MIN: float = 1.0 # seconds
 const BOAT_RESPAWN_TIME_MAX: float = 1.0 # seconds
@@ -34,12 +33,14 @@ func _ready() -> void:
 	ground_level = ground.get_height()
 
 
-func _spawn_boat(spawn_x_position: float, direction: int) -> void:
+func _spawn_boat(spawn_x_position: float, direction: int, pirate_boat: bool) -> void:
 	var boat: Boat = _boat_scene.instantiate()
 	boat.position.y = _boat_left_limit.position.y
 	boat.position.x = spawn_x_position
 	boat.direction = direction
+	boat.side = Boat.Side.LEFT if direction == 1 else Boat.Side.RIGHT
 	boat.income = BOAT_INCOME
+	boat.pirate = pirate_boat
 	
 	if direction == 1:
 		boat.x_limit = _boat_left_limit.position.x
@@ -77,16 +78,20 @@ func _on_boat_spawn_timer_timeout() -> void:
 		spawn_x_position = get_viewport_rect().end.x + BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
 		_right_boat_spawned = true
 	
-	_spawn_boat(spawn_x_position, direction)
+	var pirate_boat: bool = randi() % PIRATE_PROBABILITY == 0
+	_spawn_boat(spawn_x_position, direction, pirate_boat)
 
 
-func _on_boat_docked(amount: int) -> void:
-	State.money += amount
-	income_received.emit(amount)
+func _on_boat_docked(pirate: bool, amount: int) -> void:
+	if pirate:
+		State.money -= amount
+		State.pirated.emit(amount)
+	else:
+		State.money += amount
 
 
-func _on_boat_leaved(direction: int) -> void:
-	if direction == 1:
+func _on_boat_leaved(side: Boat.Side) -> void:
+	if side == Boat.Side.RIGHT:
 		_right_boat_spawned = false
 	else:
 		_left_boat_spawned = false

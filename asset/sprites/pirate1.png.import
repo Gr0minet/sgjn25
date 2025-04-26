@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1j855d1pv3fp"
-path="res://.godot/imported/pirate1.png-0a7d303fb47e25df62197450a9740a76.ctex"
+path="res://.godot/imported/pirate1.png-0fde672aec625939d0c9bf07ff069619.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/age1/pirate1.png"
-dest_files=["res://.godot/imported/pirate1.png-0a7d303fb47e25df62197450a9740a76.ctex"]
+source_file="res://asset/sprites/pirate1.png"
+dest_files=["res://.godot/imported/pirate1.png-0fde672aec625939d0c9bf07ff069619.ctex"]
 
 [params]
 
