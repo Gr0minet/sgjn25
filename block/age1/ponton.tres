@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BlockResource" load_steps=4 format=3 uid="uid://l5hjkuqxqovl"]
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://l5hjkuqxqovl"]
 
+[ext_resource type="PackedScene" uid="uid://d035sgdxq8lt8" path="res://scenes/prefabs/age1/ponton/block.tscn" id="1_h2f6r"]
 [ext_resource type="PackedScene" uid="uid://bhm6vetwp71oc" path="res://scenes/prefabs/age1/ponton/moving_block.tscn" id="1_nn55p"]
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_oi8bi"]
 [ext_resource type="Texture2D" uid="uid://dnsyau38crfly" path="res://asset/sprites/age1/ponton.png" id="2_8jniy"]
@@ -9,4 +10,5 @@ script = ExtResource("1_oi8bi")
 price = 100
 sprite = ExtResource("2_8jniy")
 moving_block_scene = ExtResource("1_nn55p")
+block_scene = ExtResource("1_h2f6r")
 metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

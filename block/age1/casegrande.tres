@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="BlockResource" load_steps=4 format=3 uid="uid://c2s7028mq2iq7"]
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://c2s7028mq2iq7"]
 
 [ext_resource type="PackedScene" uid="uid://v856myaf4nwd" path="res://scenes/prefabs/age1/casegrande/moving_block.tscn" id="1_73yg1"]
+[ext_resource type="PackedScene" uid="uid://cfcioxg8bd05d" path="res://scenes/prefabs/age1/casegrande/block.tscn" id="1_pdlt4"]
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_y01wr"]
 [ext_resource type="Texture2D" uid="uid://dfiqppb0hv56r" path="res://asset/sprites/age1/casegrande.png" id="2_tqsc3"]
 
@@ -9,4 +10,5 @@ script = ExtResource("1_y01wr")
 price = 100
 sprite = ExtResource("2_tqsc3")
 moving_block_scene = ExtResource("1_73yg1")
+block_scene = ExtResource("1_pdlt4")
 metadata/_custom_type_script = "uid://bss3pmeqp8ycc"
