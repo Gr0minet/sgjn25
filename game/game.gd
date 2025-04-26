@@ -2,6 +2,7 @@ class_name Game
 extends Node2D
 
 
+const BOAT_INCOME: int = 100 # euro
 const BOAT_RESPAWN_TIME_MIN: float = 1.0 # seconds
 const BOAT_RESPAWN_TIME_MAX: float = 1.0 # seconds
 const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
@@ -9,13 +10,16 @@ const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
 @onready var _boat_spawn_timer: Timer = $BoatSpawnTimer
 @onready var _boat_left_limit: Marker2D = $BoatLeftLimit
 @onready var _boat_right_limit: Marker2D = $BoatRightLimit
+@onready var _ui: UI = $UICanvasLayer/UI
 
 var _boat_scene: PackedScene = preload("uid://cimhmw5jvbwbx")
 var _left_boat_spawned: bool = false
 var _right_boat_spawned: bool = false
+var _money: int = 0
 
 
 func _ready() -> void:
+	_money = 0
 	_boat_spawn_timer.start(_get_boat_respawn_time())
 
 
@@ -24,12 +28,16 @@ func _spawn_boat(x_spawn_position: float, direction: int) -> void:
 	boat.position.y = _boat_left_limit.position.y
 	boat.position.x = x_spawn_position
 	boat.direction = direction
+	boat.income = BOAT_INCOME
+	
 	if direction == 1:
 		boat.x_limit = _boat_left_limit.position.x
 	else:
 		boat.x_limit = _boat_right_limit.position.x
-	add_child(boat)
+		
+	boat.docked.connect(_on_boat_docked)
 	boat.leaved.connect(_on_boat_leaved)
+	add_child(boat)
 
 
 func _get_boat_respawn_time() -> float:
@@ -59,6 +67,11 @@ func _on_boat_spawn_timer_timeout() -> void:
 		_right_boat_spawned = true
 	
 	_spawn_boat(x_spawn_position, direction)
+
+
+func _on_boat_docked(income: float) -> void:
+	_money += income
+	_ui.set_money_label(_money)
 
 
 func _on_boat_leaved(direction: int) -> void:

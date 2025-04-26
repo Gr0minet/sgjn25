@@ -1,7 +1,7 @@
 class_name Boat
 extends Node2D
 
-
+signal docked(income: int)
 signal leaved(direction: int)
 
 enum State {ARRIVING, LEAVING, IDLE}
@@ -12,13 +12,18 @@ const SPEED: float = 300.0 # pixel/second
 @onready var _sprite_2d: Sprite2D = $Sprite2D
 @onready var _idle_timer: Timer = $IdleTimer
 @onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var _income_label: Label = $IncomeLabel
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
 
 var direction: int
 var x_limit: float
+var income: int
+
 var _state: State = State.ARRIVING
 
 
 func _ready() -> void:
+	_income_label.hide()
 	_state = State.ARRIVING
 	_setup_visible_on_screen_notifier_2d()
 
@@ -37,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		direction == 1 and position.x + sprite_width/2 > x_limit
 		or direction == -1 and position.x - sprite_width/2 < x_limit
 	):
-		_go_idle()
+		_dock()
 
 
 func _on_idle_timer_timeout() -> void:
@@ -61,6 +66,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 
 
-func _go_idle() -> void:
+func _dock() -> void:
+	_income_label.text = str(income) + " €"
+	_animation_player.play("get_income")
+	docked.emit(income)
+	
 	_state = State.IDLE
 	_idle_timer.start(IDLE_TIME)
