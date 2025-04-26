@@ -3,7 +3,7 @@ extends Node2D
 
 enum PlayState {IDLE, PLACING_BLUEPRINT}
 
-const PIRATE_PROBABILITY: int = 2 # 1/PIRATE_PROBABILITY of boats will be pirate
+const PIRATE_PROBABILITY: int = 5 # 1/PIRATE_PROBABILITY of boats will be pirate
 const BOAT_INCOME: int = 100 # euro
 const BOAT_RESPAWN_TIME_MIN: float = 1.0 # seconds
 const BOAT_RESPAWN_TIME_MAX: float = 1.0 # seconds

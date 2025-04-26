@@ -1,7 +1,8 @@
 # TODO
 
-- bateau pirate clickable
+- limite du top scroll en fonction du top de la tour
 - hélicoptère 
+- flèche qui indique ennemie + animation
 
 ## Prototype
 

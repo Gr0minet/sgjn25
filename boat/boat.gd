@@ -9,7 +9,7 @@ signal leaved(side: Side)
 
 enum BoatState {ARRIVING, LEAVING, IDLE}
 
-const PIRATE_SPIRTE: Texture2D = preload("uid://b1j855d1pv3fp")
+const PIRATE_SPRITE: Texture2D = preload("uid://b1j855d1pv3fp")
 const IDLE_TIME: float = 2.0 # second
 const PIRATE_SPEED: float = 100.0 # pixel/second
 const NORMAL_SPEED: float = 300.0 # pixel/second
@@ -33,7 +33,7 @@ var _state: BoatState = BoatState.ARRIVING
 
 func _ready() -> void:
 	if pirate:
-		_sprite_2d.texture = PIRATE_SPIRTE
+		_sprite_2d.texture = PIRATE_SPRITE
 		modulate = Color.DARK_RED
 	if direction == 1:
 		_sprite_2d.flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=22 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
-[ext_resource type="Texture2D" uid="uid://ddgnaf5sca4lp" path="res://asset/ui/exclamation.png" id="9_b686c"]
 [ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
@@ -107,6 +106,62 @@ tracks/6/keys = {
 "values": [Color(0.639216, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_vsp63"]
+resource_name = "warning_left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%WarningLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%WarningLeft:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b686c"]
+resource_name = "warning_right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%WarningRight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%WarningRight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_3vho3"]
 resource_name = "pirated"
 length = 0.6
@@ -148,62 +203,6 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(0, 400)]
 }
 
-[sub_resource type="Animation" id="Animation_vsp63"]
-resource_name = "warning_left"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%WarningLeft:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("%WarningLeft:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.96667, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_b686c"]
-resource_name = "warning_right"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%WarningRight:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("%WarningRight:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 2.96667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 1), Color(0.639216, 0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qf6n1"]
 _data = {
 &"RESET": SubResource("Animation_qf6n1"),
@@ -211,6 +210,12 @@ _data = {
 &"warning_left": SubResource("Animation_vsp63"),
 &"warning_right": SubResource("Animation_b686c")
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qf6n1"]
+load_path = "res://.godot/imported/exclamation.png-937a545c106b3e83b1f6746d2bcd8625.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsp63"]
+load_path = "res://.godot/imported/exclamation.png-937a545c106b3e83b1f6746d2bcd8625.ctex"
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -380,6 +385,7 @@ offset_top = -64.0
 offset_right = 178.0
 offset_bottom = 64.0
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 200
 
 [node name="WarningLeft" type="TextureRect" parent="UICanvasLayer/UI/MarginContainer2"]
@@ -389,7 +395,14 @@ modulate = Color(0.639216, 0, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_b686c")
+texture = SubResource("CompressedTexture2D_qf6n1")
+
+[node name="WarningLeftAnimationPlayer" type="AnimationPlayer" parent="UICanvasLayer/UI/MarginContainer2"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qf6n1")
+}
 
 [node name="MarginContainer3" type="MarginContainer" parent="UICanvasLayer/UI"]
 layout_mode = 1
@@ -403,6 +416,7 @@ offset_top = -64.0
 offset_bottom = 64.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_right = 200
 
 [node name="WarningRight" type="TextureRect" parent="UICanvasLayer/UI/MarginContainer3"]
@@ -412,7 +426,14 @@ modulate = Color(0.639216, 0, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_b686c")
+texture = SubResource("CompressedTexture2D_vsp63")
+
+[node name="WarningRightAnimationPlayer" type="AnimationPlayer" parent="UICanvasLayer/UI/MarginContainer3"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qf6n1")
+}
 
 [node name="BlocksBuilder" parent="." instance=ExtResource("19_pxxsx")]
 

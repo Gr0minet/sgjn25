@@ -15,6 +15,8 @@ const BLUEPRINT_SCENE: PackedScene = preload("uid://bi7q5vvl3qlba")
 @onready var _money_malus: Label = %MoneyMalus
 @onready var _warning_left: TextureRect = %WarningLeft
 @onready var _warning_right: TextureRect = %WarningRight
+@onready var _warning_left_animation_player: AnimationPlayer = %WarningLeftAnimationPlayer
+@onready var _warning_right_animation_player: AnimationPlayer = %WarningRightAnimationPlayer
 
 var _block_resource_list: Array = []
 
@@ -110,6 +112,6 @@ func _on_pirated(amount: int) -> void:
 
 func _on_pirate_spawned(side: Boat.Side) -> void:
 	if side == Boat.Side.LEFT:
-		_animation_player.play("warning_left")
+		_warning_left_animation_player.play("warning_left")
 	else:
-		_animation_player.play("warning_right")
+		_warning_right_animation_player.play("warning_right")
