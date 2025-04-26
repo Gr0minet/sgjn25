@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://dmkwub2pyk2pt"]
 
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_5e7t7"]
-[ext_resource type="PackedScene" uid="uid://dcem73ji3355r" path="res://scenes/prefabs/age1/maison-etage/block.tscn" id="1_hyavt"]
-[ext_resource type="PackedScene" uid="uid://c00wrhn2ni82o" path="res://scenes/prefabs/age1/maison-etage/moving_block.tscn" id="1_msxxo"]
+[ext_resource type="PackedScene" uid="uid://dcem73ji3355r" path="res://scenes/prefabs/age2/maison-etage/block.tscn" id="1_hyavt"]
+[ext_resource type="PackedScene" uid="uid://c00wrhn2ni82o" path="res://scenes/prefabs/age2/maison-etage/moving_block.tscn" id="1_msxxo"]
 [ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age2/maison2etage.png" id="2_34vo0"]
 
 [resource]

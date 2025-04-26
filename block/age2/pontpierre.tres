@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://bxeuvwdidtk7w"]
 
-[ext_resource type="PackedScene" uid="uid://b8lsddu25w7xt" path="res://scenes/prefabs/age1/pontpierre/moving_block.tscn" id="1_4fnsi"]
+[ext_resource type="PackedScene" uid="uid://b8lsddu25w7xt" path="res://scenes/prefabs/age2/pontpierre/moving_block.tscn" id="1_4fnsi"]
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_c0gp0"]
-[ext_resource type="PackedScene" uid="uid://bjamn7nr2ahe7" path="res://scenes/prefabs/age1/pontpierre/block.tscn" id="1_d2apv"]
+[ext_resource type="PackedScene" uid="uid://bjamn7nr2ahe7" path="res://scenes/prefabs/age2/pontpierre/block.tscn" id="1_d2apv"]
 [ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age2/pontpierre.png" id="2_d5fy5"]
 
 [resource]
