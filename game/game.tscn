@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://mkysv2orsvt0" path="res://asset/sea.png" id="3_y36n6"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
-[ext_resource type="Script" path="res://game/scrolling_camera.gd" id="5_u8s88"]
+[ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
+[ext_resource type="Script" uid="uid://cjjc0uqrgwg1u" path="res://ui/scroll_container.gd" id="8_l8g03"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
@@ -20,12 +21,15 @@ size = Vector2(547, 178)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
 
+<<<<<<< HEAD
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
 texture = ExtResource("1_vasa2")
 centered = false
 metadata/_edit_lock_ = true
 
+=======
+>>>>>>> 427f0d1 (Changement du scroll)
 [node name="Sea" type="Sprite2D" parent="."]
 position = Vector2(960, 1018)
 texture = ExtResource("3_y36n6")
@@ -74,6 +78,14 @@ anchor_mode = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+texture = ExtResource("1_vasa2")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="UICanvasLayer"]
@@ -111,6 +123,8 @@ anchor_bottom = 1.0
 offset_right = 150.0
 offset_bottom = -208.0
 grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("8_l8g03")
 
 [node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI/ScrollContainer"]
 unique_name_in_owner = true

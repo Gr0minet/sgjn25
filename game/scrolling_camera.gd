@@ -2,8 +2,7 @@ class_name ScrollingCamera
 extends Node2D
 
 
-const SCROLL_TRIGGER_MARGIN: float = 100.0
-const SPEED: float = 300.0 # pixel/second
+const SPEED: float = 20.0 # pixel/mouse_scroll
 
 @onready var _camera_focus: Marker2D = $CameraFocus
 @onready var _camera_2d: Camera2D = $CameraFocus/Camera2D
@@ -16,19 +15,23 @@ func _process(delta: float) -> void:
 	if State.current != State.Value.PLAYING:
 		return
 	
-	var direction: int = 0
 	
-	var mouse_position: Vector2 = get_viewport().get_mouse_position()
-	if mouse_position.y > 0 and mouse_position.y < SCROLL_TRIGGER_MARGIN:
-		direction = -1
-	elif mouse_position.y < get_viewport_rect().end.y and mouse_position.y > get_viewport_rect().end.y - SCROLL_TRIGGER_MARGIN:
-		direction = 1
-	else:
-		return
-	
-	_camera_focus.position.y += SPEED * delta * direction
-	_camera_focus.position.y = clampf(_camera_focus.position.y, _min_position, _max_position)
-	
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if (
+		event is InputEventMouseButton
+		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_WHEEL_UP
+	):
+		_camera_focus.position.y -= SPEED
+		_camera_focus.position.y = clampf(_camera_focus.position.y, _min_position, _max_position)
+	elif (
+		event is InputEventMouseButton
+		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_WHEEL_DOWN
+	):
+		_camera_focus.position.y += SPEED
+		_camera_focus.position.y = clampf(_camera_focus.position.y, _min_position, _max_position)
+
 
 func set_min_position(value: float) -> void:
 	_min_position = value
