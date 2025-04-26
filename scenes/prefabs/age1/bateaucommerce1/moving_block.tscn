@@ -10,7 +10,7 @@ size = Vector2(2148.76, 822.304)
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_eq8w0"]
 points = PackedVector2Array(362.471, 88.4076, -393.414, 103.879, -570.229, -201.127, -145.872, -1001.22, 123.771, -890.706, 521.605, -534.866, 601.171, -267.433)
 
-[node name="MovingBlock" type="Area2D"]
+[node name="MovingBlock2" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
 script = ExtResource("1_dp5hw")

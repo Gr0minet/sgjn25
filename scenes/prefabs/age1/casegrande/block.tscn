@@ -33,15 +33,12 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
 position = Vector2(-119.35, 39.7834)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ychud")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
 position = Vector2(106.669, 44.2787)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ychud")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
 position = Vector2(-4.76837e-07, -35.363)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nsj6n")

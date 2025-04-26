@@ -10,7 +10,7 @@ points = PackedVector2Array(71.8311, 67.4108, 140.347, 405.57, 188.971, 405.57, 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
 size = Vector2(166.419, 861.461)
 
-[node name="MovingBlock" type="Area2D"]
+[node name="MovingBlock2" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
 script = ExtResource("1_dp5hw")

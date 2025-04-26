@@ -10,7 +10,7 @@ size = Vector2(404.867, 236.726)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
 size = Vector2(604.572, 274.101)
 
-[node name="MovingBlock" type="Area2D"]
+[node name="MovingBlock2" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
 script = ExtResource("1_dp5hw")
