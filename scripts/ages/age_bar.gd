@@ -1,9 +1,9 @@
-extends Control
+extends Node2D
 class_name AgeBar
 
 @export var date_txt: String = "1800"
 
-@onready var date_label: Label = $Date
+@onready var date_label: Label = $Bar/Date
 
 
 # Called when the node enters the scene tree for the first time.

@@ -268,18 +268,18 @@ libraries = {
 
 [node name="AgesMeter" type="Node2D" parent="."]
 z_index = -5
-position = Vector2(889, 940)
+position = Vector2(960, 940)
 script = ExtResource("21_mhvfb")
 bar_scene = ExtResource("21_dxwpq")
 ages_years = Array[String](["1700", "1800", "1900", "2000"])
 
 [node name="FirstYear" type="Label" parent="AgesMeter"]
-offset_left = 454.0
-offset_top = -88.0
-offset_right = 559.0
-offset_bottom = -24.0
+offset_left = 761.0
+offset_top = -95.0
+offset_right = 944.0
+offset_bottom = 15.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 80
 text = "1700"
 
 [node name="MusicManager" parent="." instance=ExtResource("10_j8tme")]
