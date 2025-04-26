@@ -1,7 +1,6 @@
 class_name Game
 extends Node2D
 
-
 signal income_received(amount: int)
 
 enum State {IDLE, PLACING_BLUEPRINT}
@@ -28,6 +27,7 @@ func _ready() -> void:
 	_money = 0
 	_boat_spawn_timer.start(_get_boat_respawn_time())
 	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
+	_blocks_builder.connect("block_placed", _on_block_placed)
 
 
 func _spawn_boat(x_spawn_position: float, direction: int) -> void:
@@ -102,4 +102,7 @@ func _on_blueprint_clicked(moving_block_scene: PackedScene) -> void:
 
 
 func _on_moving_block_canceled() -> void:
+	_state = State.IDLE
+
+func _on_block_placed(_block: Block) -> void:
 	_state = State.IDLE

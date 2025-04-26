@@ -1,6 +1,8 @@
 extends Node2D
 class_name BlocksBuilder
 
+signal block_placed(block: Block)
+
 @export var joint_scene: PackedScene
 
 @onready var joints_stacks: Node2D = $Joints
@@ -21,6 +23,9 @@ func on_place_block(from: MovingBlock) -> void:
 		joint.node_a = target.get_path()
 		joint.node_b = new_block.get_path()
 		joints_stacks.add_child(joint)
+		
+	from.queue_free()
+	block_placed.emit(new_block)
 	
 func get_intersection(moving: MovingBlock, block: Block) -> PackedVector2Array:
 	var moving_transform = moving.get_global_transform()
