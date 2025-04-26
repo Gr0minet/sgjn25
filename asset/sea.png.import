@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvnkvx20djy17"
-path="res://.godot/imported/island.png-6fd2de32c4d824000b3fa6d28e796f1c.ctex"
+uid="uid://mkysv2orsvt0"
+path="res://.godot/imported/sea.png-a0670c0a693d0e11a01cce3efd1db7ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/island.png"
-dest_files=["res://.godot/imported/island.png-6fd2de32c4d824000b3fa6d28e796f1c.ctex"]
+source_file="res://asset/sea.png"
+dest_files=["res://.godot/imported/sea.png-a0670c0a693d0e11a01cce3efd1db7ac.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1095
+process/size_limit=1920
 detect_3d/compress_to=1
