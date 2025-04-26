@@ -1,15 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://bi7q5vvl3qlba"]
 
 [ext_resource type="Script" uid="uid://cpr0kpkum75fg" path="res://ui/blueprint.gd" id="1_qck6y"]
-[ext_resource type="Texture2D" uid="uid://bt78uvi305gg1" path="res://icon.svg" id="2_4spsq"]
+[ext_resource type="Texture2D" uid="uid://bjjfgh36vniuj" path="res://asset/sprites/age1/atelier.png" id="2_qck6y"]
 
 [node name="Blueprint" type="VBoxContainer"]
 script = ExtResource("1_qck6y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("2_4spsq")
-stretch_mode = 3
+texture = ExtResource("2_qck6y")
+expand_mode = 4
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

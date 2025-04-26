@@ -6,6 +6,12 @@ extends VBoxContainer
 signal clicked(moving_block_scene: PackedScene)
 
 @export var moving_block_scene: PackedScene = preload("uid://5011xni60ds6")
+@export var sprite: Texture2D:
+	set(value):
+		if not is_node_ready():
+			await ready
+		sprite = value
+		_texture_rect.texture = sprite
 @export var price: int = 100: # euro
 	set(value):
 		if not is_node_ready():
@@ -14,6 +20,7 @@ signal clicked(moving_block_scene: PackedScene)
 		_label.text = str(price) + "€"	
 
 @onready var _label: Label = $Label
+@onready var _texture_rect: TextureRect = $TextureRect
 
 
 func _gui_input(event: InputEvent) -> void:

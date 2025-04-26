@@ -25,15 +25,15 @@ var _state: State = State.IDLE
 
 func _ready() -> void:
 	_money = 0
-	_boat_spawn_timer.start(_get_boat_respawn_time())
 	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
 	_blocks_builder.connect("block_placed", _on_block_placed)
+	_ui.game_started.connect(_on_game_started)
 
 
-func _spawn_boat(x_spawn_position: float, direction: int) -> void:
+func _spawn_boat(spawn_x_position: float, direction: int) -> void:
 	var boat: Boat = _boat_scene.instantiate()
 	boat.position.y = _boat_left_limit.position.y
-	boat.position.x = x_spawn_position
+	boat.position.x = spawn_x_position
 	boat.direction = direction
 	boat.income = BOAT_INCOME
 	
@@ -56,7 +56,7 @@ func _get_boat_respawn_time() -> float:
 
 func _on_boat_spawn_timer_timeout() -> void:
 	var direction: int
-	var x_spawn_position: float
+	var spawn_x_position: float
 	
 	if not _left_boat_spawned and not _right_boat_spawned:
 		direction = 1 if randi() % 2 else -1
@@ -67,13 +67,13 @@ func _on_boat_spawn_timer_timeout() -> void:
 		direction = -1
 	
 	if direction == 1:
-		x_spawn_position = -BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
+		spawn_x_position = -BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
 		_left_boat_spawned = true
 	else:
-		x_spawn_position = get_viewport_rect().end.x + BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
+		spawn_x_position = get_viewport_rect().end.x + BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER
 		_right_boat_spawned = true
 	
-	_spawn_boat(x_spawn_position, direction)
+	_spawn_boat(spawn_x_position, direction)
 
 
 func _on_boat_docked(amount: int) -> void:
@@ -106,3 +106,6 @@ func _on_moving_block_canceled() -> void:
 
 func _on_block_placed(_block: Block) -> void:
 	_state = State.IDLE
+
+func _on_game_started() -> void:
+	_boat_spawn_timer.start(_get_boat_respawn_time())

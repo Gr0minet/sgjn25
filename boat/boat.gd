@@ -23,6 +23,8 @@ var _state: State = State.ARRIVING
 
 
 func _ready() -> void:
+	if direction == 1:
+		_sprite_2d.flip_h = true
 	_income_label.hide()
 	_state = State.ARRIVING
 	_setup_visible_on_screen_notifier_2d()
@@ -37,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if _state == State.LEAVING:
 		return
 	
-	var sprite_width: float = _sprite_2d.texture.get_width()
+	var sprite_width: float = _sprite_2d.texture.get_width() * _sprite_2d.scale.x
 	if (
 		direction == 1 and position.x + sprite_width/2 > x_limit
 		or direction == -1 and position.x - sprite_width/2 < x_limit
@@ -48,8 +50,10 @@ func _physics_process(delta: float) -> void:
 func _on_idle_timer_timeout() -> void:
 	if direction == 1:
 		direction = -1
+		_sprite_2d.flip_h = false
 	else:
 		direction = 1
+		_sprite_2d.flip_h = true
 	_state = State.LEAVING
 
 

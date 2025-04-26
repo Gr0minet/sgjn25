@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cimhmw5jvbwbx"]
 
 [ext_resource type="Script" uid="uid://c8rypokjr24ok" path="res://boat/boat.gd" id="1_enlnh"]
-[ext_resource type="Texture2D" uid="uid://bt78uvi305gg1" path="res://icon.svg" id="1_jbc2f"]
+[ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="2_enlnh"]
 
 [sub_resource type="Animation" id="Animation_ml88t"]
 length = 0.001
@@ -93,9 +93,8 @@ _data = {
 script = ExtResource("1_enlnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.492761, 0.492761, 0.49276, 1)
-scale = Vector2(1, 0.4)
-texture = ExtResource("1_jbc2f")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_enlnh")
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
