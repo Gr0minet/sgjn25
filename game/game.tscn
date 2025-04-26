@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
+[ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakft"]

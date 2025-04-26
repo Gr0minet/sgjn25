@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://g2nr27scdv7" path="res://asset/sprites/prototype/joint-debug.png" id="1_p10ac"]
 
 [node name="Joint" type="PinJoint2D"]
-modulate = Color(1, 1, 1, 0)
 softness = 1.32
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.760615, 0.918898, 0.346387, 1)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_p10ac")

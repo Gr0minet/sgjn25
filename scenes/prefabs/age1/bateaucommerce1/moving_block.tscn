@@ -1,11 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://whaf3fy4scv4"]
+[gd_scene load_steps=5 format=3 uid="uid://whaf3fy4scv4"]
 
 [ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
-[ext_resource type="PackedScene" uid="uid://dclnx6bpnb707" path="res://scenes/prefabs/block.tscn" id="2_x3t1k"]
 [ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="3_nhccr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
-size = Vector2(2148.76, 822.304)
+size = Vector2(2121.88, 696.241)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_eq8w0"]
 points = PackedVector2Array(362.471, 88.4076, -393.414, 103.879, -570.229, -201.127, -145.872, -1001.22, 123.771, -890.706, 521.605, -534.866, 601.171, -267.433)
@@ -16,19 +15,18 @@ collision_layer = 3
 script = ExtResource("1_dp5hw")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
-instantiate_block = ExtResource("2_x3t1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(65, 257)
-scale = Vector2(0.204304, 0.204304)
+position = Vector2(20, 79)
+scale = Vector2(0.0603239, 0.0603239)
 shape = SubResource("RectangleShape2D_5s5wv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.452, 0.452)
+scale = Vector2(0.13346, 0.13346)
 texture = ExtResource("3_nhccr")
 
 [node name="InsideArea" type="Area2D" parent="."]
-scale = Vector2(0.452, 0.452)
+scale = Vector2(0.13346, 0.13346)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
