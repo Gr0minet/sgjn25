@@ -4,8 +4,8 @@ extends Control
 
 signal blueprint_clicked(moving_block_scene: PackedScene)
 
-@onready var _money_label: Label = $MarginContainer/MoneyLabel
-@onready var _blueprint_container: VBoxContainer = $BlueprintContainer
+@onready var _money_label: Label = %MoneyLabel
+@onready var _blueprint_container: VBoxContainer = %BlueprintContainer
 
 
 func _ready() -> void:

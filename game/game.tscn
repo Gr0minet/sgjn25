@@ -52,19 +52,42 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 
 [node name="MoneyLabel" type="Label" parent="UICanvasLayer/UI/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "0 €"
 
-[node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ScrollContainer" type="ScrollContainer" parent="UICanvasLayer/UI"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 150.0
+offset_bottom = -208.0
+grow_vertical = 2
 
-[node name="Blueprint" parent="UICanvasLayer/UI/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+[node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Blueprint" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
 layout_mode = 2
 
-[node name="Blueprint3" parent="UICanvasLayer/UI/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+[node name="Blueprint3" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+layout_mode = 2
+
+[node name="Blueprint4" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+layout_mode = 2
+
+[node name="Blueprint5" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+layout_mode = 2
+
+[node name="Blueprint6" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
+layout_mode = 2
+
+[node name="Blueprint7" parent="UICanvasLayer/UI/ScrollContainer/BlueprintContainer" instance=ExtResource("5_dxrkv")]
 layout_mode = 2
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]
