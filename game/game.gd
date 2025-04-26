@@ -29,7 +29,7 @@ func _ready() -> void:
 	State.money = 0
 	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
 	_blocks_builder.connect("block_placed", _on_block_placed)
-	_ui.game_started.connect(_on_game_started)
+	State.game_started.connect(_on_game_started)
 	var ground: Block = $Ground
 	ground_level = ground.get_height()
 

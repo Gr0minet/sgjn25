@@ -2,7 +2,6 @@ class_name UI
 extends Control
 
 
-signal game_started()
 signal blueprint_clicked(block_resource: BlockResource)
 
 const BLOCK_RESOURCE_FOLDER: String = "res://block/"
@@ -46,8 +45,7 @@ func _start_game() -> void:
 	_money_label.show()
 	_blueprint_container.show()
 	_start_label.hide()
-	State.current = State.Value.PLAYING
-	game_started.emit()
+	State.start_game()
 
 
 func _on_money_changed(new_value: int) -> void:

@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=12 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
-[ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
+[ext_resource type="Script" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
+[ext_resource type="PackedScene" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
+[ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakft"]
 size = Vector2(322, 26)
@@ -18,6 +20,7 @@ size = Vector2(344, 124)
 script = ExtResource("1_h7iqs")
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("1_vasa2")
 centered = false
 
@@ -125,5 +128,21 @@ theme_override_font_sizes/font_size = 64
 text = "Click to start"
 
 [node name="BlocksBuilder" parent="." instance=ExtResource("19_pxxsx")]
+
+[node name="AgesMeter" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(576, 556)
+script = ExtResource("21_mhvfb")
+bar_scene = ExtResource("21_dxwpq")
+ages_years = Array[String](["1700", "1800", "1900", "2000"])
+
+[node name="FirstYear" type="Label" parent="AgesMeter"]
+offset_left = 454.0
+offset_top = -88.0
+offset_right = 559.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "1700"
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]
