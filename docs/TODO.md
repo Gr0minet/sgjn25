@@ -1,5 +1,13 @@
 # TODO
 
+- Maj les blueprint quand on change d'âge
+- Scroll molette
+- Intégration Background / ile
+- vérifier que le joueur a l'argent pour payer un bloc
+- état grisé quand on ne peut pas payer un bloc
+- bateau pirate clickable
+- hélicoptère 
+
 ## Prototype
 
 - Jeu
