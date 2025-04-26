@@ -15,7 +15,13 @@ func on_place_block(from: MovingBlock) -> void:
 	
 	var new_block: Block =  from.block_resource.block_scene.instantiate()
 	new_block.global_position = from.global_position
-	new_block.color = State.AGES_COLOR[State.age]
+	
+	var current_color := State.AGES_COLOR[State.age]
+	var next_color := State.AGES_COLOR[(State.age + 1) if State.age < State.MAX_AGE else State.age]
+	var color = current_color.lerp(next_color, State.get_age_progression())
+	# new_block.color = State.AGES_COLOR[State.age]
+	new_block.color = color
+	
 	blocks_parent.add_child(new_block)
 	
 	for point: Vector2 in intersect_points:

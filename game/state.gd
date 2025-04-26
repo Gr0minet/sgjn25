@@ -39,3 +39,9 @@ func set_height_reached(height: float):
 func start_game():
 	current = State.Value.PLAYING
 	game_started.emit()
+
+func get_age_progression() -> float:
+	if age == MAX_AGE: return 0.0
+	
+	var current_position := height_reached - (float(age) * AGE_HEIGHT)
+	return current_position / AGE_HEIGHT
