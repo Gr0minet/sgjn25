@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="PackedScene" uid="uid://bi7q5vvl3qlba" path="res://ui/blueprint.tscn" id="5_dxrkv"]
+[ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="Texture2D" uid="uid://dsim6ia7gi2jh" path="res://asset/sprites/age1/arbres1.png" id="6_dakft"]
 [ext_resource type="Texture2D" uid="uid://bjjfgh36vniuj" path="res://asset/sprites/age1/atelier.png" id="7_y36n6"]
 [ext_resource type="Texture2D" uid="uid://c7xc5hqom84px" path="res://asset/sprites/age1/bateaucommerce1.png" id="8_l8g03"]
@@ -25,9 +26,6 @@ size = Vector2(322, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5opy"]
 size = Vector2(344, 124)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxrkv"]
-size = Vector2(1152, 130)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -67,21 +65,11 @@ position = Vector2(368, 549)
 position = Vector2(774, 548)
 
 [node name="ScrollingCamera" type="Node2D" parent="."]
+script = ExtResource("5_u8s88")
 
-[node name="TopArea" type="Area2D" parent="ScrollingCamera"]
+[node name="CameraFocus" type="Marker2D" parent="ScrollingCamera"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrollingCamera/TopArea"]
-position = Vector2(576, 65)
-shape = SubResource("RectangleShape2D_dxrkv")
-
-[node name="BottomArea" type="Area2D" parent="ScrollingCamera"]
-position = Vector2(0, 518)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrollingCamera/BottomArea"]
-position = Vector2(576, 65)
-shape = SubResource("RectangleShape2D_dxrkv")
-
-[node name="Camera2D" type="Camera2D" parent="ScrollingCamera"]
+[node name="Camera2D" type="Camera2D" parent="ScrollingCamera/CameraFocus"]
 anchor_mode = 0
 limit_smoothed = true
 position_smoothing_enabled = true
