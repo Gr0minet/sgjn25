@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj3vuh0ae3tnn"]
+[gd_scene load_steps=6 format=3 uid="uid://bj3vuh0ae3tnn"]
 
 [ext_resource type="PackedScene" uid="uid://dclnx6bpnb707" path="res://scenes/prefabs/block.tscn" id="1_3buo7"]
 [ext_resource type="PackedScene" uid="uid://5011xni60ds6" path="res://scenes/prefabs/moving_block.tscn" id="2_gutyy"]
+[ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="3_ekphp"]
+[ext_resource type="PackedScene" uid="uid://d230h6jwi65u4" path="res://scenes/prefabs/joint.tscn" id="4_6isrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3buo7"]
 size = Vector2(1280, 100)
@@ -31,3 +33,9 @@ shape = SubResource("RectangleShape2D_3buo7")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
 position = Vector2(576, 389)
+
+[node name="BlocksBuilder" parent="." node_paths=PackedStringArray("blocks_parent") instance=ExtResource("3_ekphp")]
+joint_scene = ExtResource("4_6isrn")
+blocks_parent = NodePath("..")
+
+[connection signal="place_block" from="MovingBlock" to="BlocksBuilder" method="on_place_block"]

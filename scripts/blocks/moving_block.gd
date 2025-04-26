@@ -3,17 +3,19 @@ class_name MovingBlock
 
 
 signal canceled()
+signal place_block(block: MovingBlock)
 
 @export var color_neutral: Color = Color.WHITE
 @export var color_invalid: Color
 @export var color_valid: Color
+@export var instantiate_block: PackedScene
 
 @onready var inside_area: Area2D = $InsideArea
+@onready var shape: Shape2D = $CollisionShape2D.shape
 
 var opacity: float
 var is_connected := false
 var is_overlapping := false
-
 
 func _process(delta: float) -> void:
 	var cursor_position := get_viewport().get_camera_2d().get_global_mouse_position()
@@ -32,10 +34,13 @@ func _process(delta: float) -> void:
 		modulate = color_valid
 	else:
 		modulate = color_neutral
-
-
+		
 func _input(event: InputEvent) -> void:
-	if (
+	if event is InputEventMouseButton && event.is_pressed() \
+		&& (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
+		if is_connected && !is_overlapping:
+			place_block.emit(self)
+	elif (
 		event is InputEventMouseButton
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT
 		and (event as InputEventMouseButton).pressed

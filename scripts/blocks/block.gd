@@ -1,5 +1,7 @@
 extends RigidBody2D
+class_name Block
 
+@onready var shape: Shape2D = $CollisionShape2D.shape
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

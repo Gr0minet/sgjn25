@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5011xni60ds6"]
+[gd_scene load_steps=6 format=3 uid="uid://5011xni60ds6"]
 
 [ext_resource type="Texture2D" uid="uid://bpuk262dowply" path="res://asset/sprites/prototype/square.png" id="1_5s5wv"]
-[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/moving_block.gd" id="1_dp5hw"]
+[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
+[ext_resource type="PackedScene" uid="uid://dclnx6bpnb707" path="res://scenes/prefabs/block.tscn" id="2_x3t1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(300, 300)
@@ -17,6 +18,7 @@ monitorable = false
 script = ExtResource("1_dp5hw")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
+instantiate_block = ExtResource("2_x3t1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

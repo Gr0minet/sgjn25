@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d230h6jwi65u4"]
+
+[ext_resource type="Texture2D" uid="uid://g2nr27scdv7" path="res://asset/sprites/prototype/joint-debug.png" id="1_p10ac"]
+
+[node name="Joint" type="PinJoint2D"]
+softness = 1.32
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.760615, 0.918898, 0.346387, 1)
+show_behind_parent = true
+top_level = true
+scale = Vector2(0.298013, 0.298013)
+texture = ExtResource("1_p10ac")
