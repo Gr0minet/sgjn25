@@ -13,7 +13,6 @@ size = Vector2(240, 240)
 [node name="MovingBlock" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_dp5hw")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
@@ -30,6 +29,7 @@ texture = ExtResource("1_5s5wv")
 
 [node name="InsideArea" type="Area2D" parent="."]
 scale = Vector2(0.452, 0.452)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
 scale = Vector2(0.452, 0.452)
