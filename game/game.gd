@@ -50,6 +50,9 @@ func _spawn_boat(spawn_x_position: float, direction: int, pirate_boat: bool) -> 
 	boat.docked.connect(_on_boat_docked)
 	boat.leaved.connect(_on_boat_leaved)
 	add_child(boat)
+	
+	if pirate_boat:
+		State.pirate_spawned.emit(boat.side)
 
 
 func _get_boat_respawn_time() -> float:

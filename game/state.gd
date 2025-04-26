@@ -3,6 +3,7 @@ extends Node
 signal update_height_reached(value: float)
 signal update_age(age: int)
 signal pirated(amount: int)
+signal pirate_spawned(side: Boat.Side)
 signal game_started
 
 signal money_changed(new_value: int)

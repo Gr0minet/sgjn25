@@ -13,7 +13,8 @@ const BLUEPRINT_SCENE: PackedScene = preload("uid://bi7q5vvl3qlba")
 @onready var _start_label: Label = %StartLabel
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _money_malus: Label = %MoneyMalus
-
+@onready var _warning_left: TextureRect = %WarningLeft
+@onready var _warning_right: TextureRect = %WarningRight
 
 var _block_resource_list: Array = []
 
@@ -23,9 +24,13 @@ func _ready() -> void:
 	_blueprint_container.hide()
 	_blueprint_container_2.hide()
 	_start_label.show()
+	_warning_left.hide()
+	_warning_right.hide()
+	
 	State.money_changed.connect(_on_money_changed)
 	State.update_age.connect(_update_age)
 	State.pirated.connect(_on_pirated)
+	State.pirate_spawned.connect(_on_pirate_spawned)
 	
 	_setup_block_resource_list()
 	_update_age(State.age)
@@ -101,3 +106,10 @@ func _update_age(age: int) -> void:
 func _on_pirated(amount: int) -> void:
 	_money_malus.text = "-" + str(amount)
 	_animation_player.play("pirated")
+
+
+func _on_pirate_spawned(side: Boat.Side) -> void:
+	if side == Boat.Side.LEFT:
+		_animation_player.play("warning_left")
+	else:
+		_animation_player.play("warning_right")
