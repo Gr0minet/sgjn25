@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=14 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -21,15 +21,12 @@ size = Vector2(547, 178)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
 
-<<<<<<< HEAD
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
 texture = ExtResource("1_vasa2")
 centered = false
 metadata/_edit_lock_ = true
 
-=======
->>>>>>> 427f0d1 (Changement du scroll)
 [node name="Sea" type="Sprite2D" parent="."]
 position = Vector2(960, 1018)
 texture = ExtResource("3_y36n6")
