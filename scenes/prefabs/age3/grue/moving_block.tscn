@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqfs0vwr3e0wk"]
+[gd_scene load_steps=5 format=3 uid="uid://rklokf1kftev"]
 
-[ext_resource type="Texture2D" uid="uid://bpuk262dowply" path="res://asset/sprites/prototype/square.png" id="1_5s5wv"]
 [ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
+[ext_resource type="Texture2D" uid="uid://c4aj71vkr4qe1" path="res://asset/sprites/age3/grue3.png" id="2_et35i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(300, 300)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jtd4"]
+size = Vector2(165, 41)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
-size = Vector2(240, 240)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6kcy3"]
+points = PackedVector2Array(-144, -3, -85, -87, 1, -75, 1, -39, 117, -16, 128, 104, -22, 102, -8, -13, -97, -7)
 
 [node name="MovingBlock" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
@@ -16,16 +16,16 @@ script = ExtResource("1_dp5hw")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_e67gr")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5s5wv")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_et35i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(52.5, 113.5)
+shape = SubResource("RectangleShape2D_1jtd4")
 
 [node name="InsideArea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
-scale = Vector2(0.452, 0.452)
-shape = SubResource("RectangleShape2D_5s5wv")
+shape = SubResource("ConvexPolygonShape2D_6kcy3")

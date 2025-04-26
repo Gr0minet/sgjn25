@@ -1,27 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3tjwb6xvbyl6"]
+[gd_scene load_steps=6 format=3 uid="uid://c0r6vjsxh6ubv"]
 
-[ext_resource type="Texture2D" uid="uid://bpuk262dowply" path="res://asset/sprites/prototype/square.png" id="1_e67gr"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://fme4uyysfoq2" path="res://asset/sprites/age3/immeuble2_3.png" id="2_kr3ry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(300, 300)
+size = Vector2(142, 377)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
-size = Vector2(20, 239)
+size = Vector2(33, 373.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
-size = Vector2(300, 20)
+size = Vector2(140, 29)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 3
 script = ExtResource("1_ychud")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_e67gr")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_e67gr")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kr3ry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="StickZone" type="Area2D" parent="."]
 collision_layer = 3
@@ -29,13 +30,13 @@ collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-140, -30.5)
+position = Vector2(-54, 12.25)
 shape = SubResource("RectangleShape2D_ychud")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(140, -30.5)
+position = Vector2(52, 13)
 shape = SubResource("RectangleShape2D_ychud")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-1, -140)
+position = Vector2(1, -160)
 shape = SubResource("RectangleShape2D_nsj6n")

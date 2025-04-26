@@ -1,27 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://5idmq1sqyh2s"]
+[gd_scene load_steps=7 format=3 uid="uid://vo1gt5h02e2d"]
 
-[ext_resource type="Texture2D" uid="uid://bpuk262dowply" path="res://asset/sprites/prototype/square.png" id="1_e67gr"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://c4aj71vkr4qe1" path="res://asset/sprites/age3/grue3.png" id="2_2xgn8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(300, 300)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xr56l"]
+points = PackedVector2Array(-140.5, -8.5, -121.5, -144.5, 21.5, -90.5, 23.5, -55.5, 141.5, -43.5, 148.5, 130.5, -40.5, 132.5, -30.5, -38.5, -89.5, -10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hunsm"]
+size = Vector2(19, 130.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
-size = Vector2(20, 239)
+size = Vector2(19, 169)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
-size = Vector2(300, 20)
+size = Vector2(111, 30)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 3
 script = ExtResource("1_ychud")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_e67gr")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_e67gr")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_2xgn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 7.5)
+shape = SubResource("ConvexPolygonShape2D_xr56l")
 
 [node name="StickZone" type="Area2D" parent="."]
 collision_layer = 3
@@ -29,13 +33,13 @@ collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-140, -30.5)
-shape = SubResource("RectangleShape2D_ychud")
+position = Vector2(-18, 72.25)
+shape = SubResource("RectangleShape2D_hunsm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(140, -30.5)
+position = Vector2(127.5, 52.5)
 shape = SubResource("RectangleShape2D_ychud")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-1, -140)
+position = Vector2(71.5, -18)
 shape = SubResource("RectangleShape2D_nsj6n")
