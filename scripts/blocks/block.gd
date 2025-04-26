@@ -7,6 +7,9 @@ class_name Block
 @export var color: Color = Color.BLACK
 @export var is_static := false
 
+func _ready() -> void:
+	sprite.self_modulate = color
+
 func get_height() -> float:
 	if is_static: return global_position.y
 	var size = sprite.texture.get_size() * sprite.scale

@@ -11,6 +11,13 @@ enum Value {MAIN_MENU, PLAYING}
 var AGE_HEIGHT := 1400.0
 var MAX_AGE = 3
 
+var AGES_COLOR: Array[Color] = [
+	Color("#795336"),
+	Color("#938122"),
+	Color("#657f3f"),
+	Color("#008675"),
+]
+
 var current: State.Value
 var height_reached := 0.0
 var age := 0
