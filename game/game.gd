@@ -22,12 +22,16 @@ var _right_boat_spawned: bool = false
 var _money: int = 0
 var _play_state: PlayState = PlayState.IDLE
 
+var ground_level := 0.0
+
 
 func _ready() -> void:
 	_money = 0
 	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
 	_blocks_builder.connect("block_placed", _on_block_placed)
 	_ui.game_started.connect(_on_game_started)
+	var ground: Block = $Ground
+	ground_level = ground.get_height()
 
 
 func _spawn_boat(spawn_x_position: float, direction: int) -> void:
@@ -104,8 +108,12 @@ func _on_blueprint_clicked(moving_block_scene: PackedScene) -> void:
 func _on_moving_block_canceled() -> void:
 	_play_state = PlayState.IDLE
 
-func _on_block_placed(_block: Block) -> void:
+func _on_block_placed(block: Block) -> void:
 	_play_state = PlayState.IDLE
+	
+	var block_height := absf(ground_level - block.get_height())
+	if block_height > State.height_reached:
+		State.set_height_reached(block_height)
 
 func _on_game_started() -> void:
 	_boat_spawn_timer.start(_get_boat_respawn_time())
