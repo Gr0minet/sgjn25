@@ -13,7 +13,7 @@ func on_place_block(from: MovingBlock) -> void:
 	var target: Block = from.get_overlapping_bodies()[0]
 	var intersect_points := get_intersection(from, target)
 	
-	var new_block: Block =  from.instantiate_block.instantiate()
+	var new_block: Block =  from.block_resource.block_scene.instantiate()
 	new_block.global_position = from.global_position
 	blocks_parent.add_child(new_block)
 	

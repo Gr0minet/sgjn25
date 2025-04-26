@@ -99,6 +99,7 @@ func _on_blueprint_clicked(block_resource: BlockResource) -> void:
 	
 	_play_state = PlayState.PLACING_BLUEPRINT
 	var moving_block: MovingBlock = block_resource.moving_block_scene.instantiate()
+	moving_block.block_resource = block_resource
 	moving_block.canceled.connect(_on_moving_block_canceled)
 	moving_block.place_block.connect(_blocks_builder.on_place_block)
 	add_child(moving_block)

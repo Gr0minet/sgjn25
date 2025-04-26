@@ -3,12 +3,11 @@ class_name MovingBlock
 
 
 signal canceled()
-signal place_block(block: MovingBlock)
+signal place_block()
 
 @export var color_neutral: Color = Color.WHITE
 @export var color_invalid: Color
 @export var color_valid: Color
-@export var instantiate_block: PackedScene
 
 @onready var inside_area: Area2D = $InsideArea
 @onready var shape: Shape2D = $CollisionShape2D.shape
@@ -16,6 +15,7 @@ signal place_block(block: MovingBlock)
 var opacity: float
 var is_connected := false
 var is_overlapping := false
+var block_resource: BlockResource
 
 func _process(delta: float) -> void:
 	var cursor_position := get_viewport().get_camera_2d().get_global_mouse_position()

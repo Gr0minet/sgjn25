@@ -43,6 +43,8 @@ shape = SubResource("RectangleShape2D_dakft")
 position = Vector2(5, 26)
 shape = SubResource("RectangleShape2D_u5opy")
 
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+
 [node name="BoatSpawnTimer" type="Timer" parent="."]
 one_shot = true
 
