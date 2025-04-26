@@ -1,6 +1,9 @@
 extends Area2D
 class_name MovingBlock
 
+
+signal canceled()
+
 @export var color_neutral: Color = Color.WHITE
 @export var color_invalid: Color
 @export var color_valid: Color
@@ -10,6 +13,7 @@ class_name MovingBlock
 var opacity: float
 var is_connected := false
 var is_overlapping := false
+
 
 func _process(delta: float) -> void:
 	var cursor_position := get_viewport().get_camera_2d().get_global_mouse_position()
@@ -28,3 +32,13 @@ func _process(delta: float) -> void:
 		modulate = color_valid
 	else:
 		modulate = color_neutral
+
+
+func _input(event: InputEvent) -> void:
+	if (
+		event is InputEventMouseButton
+		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT
+		and (event as InputEventMouseButton).pressed
+	):
+		canceled.emit()
+		queue_free()

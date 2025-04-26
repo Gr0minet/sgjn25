@@ -7,8 +7,8 @@
   - Instancier nouveau bloc
   - Poser bloc
   - Caméra
-    - Scroll Vertical
-    - Limite en hauteur
+	- Scroll Vertical
+	- Limite en hauteur
   - Île
   - Mer
   - Faire spawn bateau sur gain de pièce
@@ -17,7 +17,7 @@
   - Condition de posage
   - Zones de "collage"
   - Physique
-    - Zone de collision
+	- Zone de collision
 - UI
   - Liste de Bloc
   - Scène : Item

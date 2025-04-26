@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=7 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
 [ext_resource type="Texture2D" uid="uid://dvnkvx20djy17" path="res://asset/island.png" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
+[ext_resource type="Script" uid="uid://cpr0kpkum75fg" path="res://ui/blueprint.gd" id="5_dakft"]
+[ext_resource type="Texture2D" uid="uid://bt78uvi305gg1" path="res://icon.svg" id="5_dxrkv"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -24,6 +26,9 @@ position = Vector2(368, 549)
 
 [node name="BoatRightLimit" type="Marker2D" parent="."]
 position = Vector2(774, 548)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
 
@@ -51,5 +56,38 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "0 €"
+
+[node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Blueprint" type="VBoxContainer" parent="UICanvasLayer/UI/BlueprintContainer"]
+layout_mode = 2
+script = ExtResource("5_dakft")
+
+[node name="TextureRect" type="TextureRect" parent="UICanvasLayer/UI/BlueprintContainer/Blueprint"]
+layout_mode = 2
+texture = ExtResource("5_dxrkv")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UICanvasLayer/UI/BlueprintContainer/Blueprint"]
+layout_mode = 2
+text = "100€"
+horizontal_alignment = 1
+
+[node name="Blueprint2" type="VBoxContainer" parent="UICanvasLayer/UI/BlueprintContainer"]
+layout_mode = 2
+script = ExtResource("5_dakft")
+
+[node name="TextureRect" type="TextureRect" parent="UICanvasLayer/UI/BlueprintContainer/Blueprint2"]
+layout_mode = 2
+texture = ExtResource("5_dxrkv")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UICanvasLayer/UI/BlueprintContainer/Blueprint2"]
+layout_mode = 2
+text = "50€"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]

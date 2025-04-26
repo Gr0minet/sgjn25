@@ -2,6 +2,10 @@ class_name Game
 extends Node2D
 
 
+signal income_received(amount: int)
+
+enum State {IDLE, PLACING_BLUEPRINT}
+
 const BOAT_INCOME: int = 100 # euro
 const BOAT_RESPAWN_TIME_MIN: float = 1.0 # seconds
 const BOAT_RESPAWN_TIME_MAX: float = 1.0 # seconds
@@ -16,11 +20,13 @@ var _boat_scene: PackedScene = preload("uid://cimhmw5jvbwbx")
 var _left_boat_spawned: bool = false
 var _right_boat_spawned: bool = false
 var _money: int = 0
+var _state: State = State.IDLE
 
 
 func _ready() -> void:
 	_money = 0
 	_boat_spawn_timer.start(_get_boat_respawn_time())
+	_ui.blueprint_clicked.connect(_on_blueprint_clicked)
 
 
 func _spawn_boat(x_spawn_position: float, direction: int) -> void:
@@ -52,7 +58,7 @@ func _on_boat_spawn_timer_timeout() -> void:
 	var x_spawn_position: float
 	
 	if not _left_boat_spawned and not _right_boat_spawned:
-		direction = 1 if randi() % 2 == 1 else -1
+		direction = 1 if randi() % 2 else -1
 		_boat_spawn_timer.start(_get_boat_respawn_time())
 	elif not _left_boat_spawned:
 		direction = 1
@@ -69,8 +75,9 @@ func _on_boat_spawn_timer_timeout() -> void:
 	_spawn_boat(x_spawn_position, direction)
 
 
-func _on_boat_docked(income: float) -> void:
-	_money += income
+func _on_boat_docked(amount: int) -> void:
+	_money += amount
+	income_received.emit(amount)
 	_ui.set_money_label(_money)
 
 
@@ -80,3 +87,17 @@ func _on_boat_leaved(direction: int) -> void:
 	else:
 		_left_boat_spawned = false
 	_boat_spawn_timer.start(_get_boat_respawn_time())
+
+
+func _on_blueprint_clicked(moving_block_scene: PackedScene) -> void:
+	if _state != State.IDLE:
+		return
+	
+	_state = State.PLACING_BLUEPRINT
+	var moving_block: MovingBlock = moving_block_scene.instantiate()
+	moving_block.canceled.connect(_on_moving_block_canceled)
+	add_child(moving_block)
+
+
+func _on_moving_block_canceled() -> void:
+	_state = State.IDLE
