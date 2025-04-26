@@ -1,27 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dclnx6bpnb707"]
+[gd_scene load_steps=5 format=3 uid="uid://dfdi75nkie7rs"]
 
-[ext_resource type="Texture2D" uid="uid://bpuk262dowply" path="res://asset/sprites/prototype/square.png" id="1_e67gr"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://cbwtpt6qqacgf" path="res://asset/sprites/age2/colonne.png" id="2_yqjeh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(300, 300)
+size = Vector2(42, 214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
-size = Vector2(20, 239)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
-size = Vector2(300, 20)
+size = Vector2(24, 148)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 3
 script = ExtResource("1_ychud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_e67gr")
+scale = Vector2(0.285443, 0.285443)
+texture = ExtResource("2_yqjeh")
 
 [node name="StickZone" type="Area2D" parent="."]
 collision_layer = 3
@@ -29,13 +27,5 @@ collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-140, -30.5)
+position = Vector2(4, 35)
 shape = SubResource("RectangleShape2D_ychud")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(140, -30.5)
-shape = SubResource("RectangleShape2D_ychud")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(-1, -140)
-shape = SubResource("RectangleShape2D_nsj6n")
