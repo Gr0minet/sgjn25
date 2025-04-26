@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cey7kuuy61s2g"]
 
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://coms53rxe2prx" path="res://asset/sprites/age1/tourpierre.png" id="2_hvac5"]
+[ext_resource type="Texture2D" uid="uid://coms53rxe2prx" path="res://asset/sprites/age2/tourpierre.png" id="2_hvac5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(234.28, 377.942)

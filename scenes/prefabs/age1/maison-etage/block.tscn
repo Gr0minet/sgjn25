@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcem73ji3355r"]
 
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age1/maison2etage.png" id="2_qrafd"]
+[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age2/maison2etage.png" id="2_qrafd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(472.98, 722.732)

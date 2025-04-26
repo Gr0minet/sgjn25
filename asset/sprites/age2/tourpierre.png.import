@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgpydxfe6hfel"
-path="res://.godot/imported/pontpierre.png-e77ed1533a094d515a721d1e6f0d673f.ctex"
+uid="uid://coms53rxe2prx"
+path="res://.godot/imported/tourpierre.png-296cbb40a6d8a283e62cbd13e24169a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/age1/pontpierre.png"
-dest_files=["res://.godot/imported/pontpierre.png-e77ed1533a094d515a721d1e6f0d673f.ctex"]
+source_file="res://asset/sprites/age2/tourpierre.png"
+dest_files=["res://.godot/imported/tourpierre.png-296cbb40a6d8a283e62cbd13e24169a9.ctex"]
 
 [params]
 

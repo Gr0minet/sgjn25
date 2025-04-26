@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bfivqt1b3qj"
-path="res://.godot/imported/reservoir.png-95a0fd6b99940ed64fa342b56e3a9945.ctex"
+uid="uid://c0q0clfymrkbv"
+path="res://.godot/imported/eglise1.png-a03812707b65c2f61b80397e0a45ba47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/age1/reservoir.png"
-dest_files=["res://.godot/imported/reservoir.png-95a0fd6b99940ed64fa342b56e3a9945.ctex"]
+source_file="res://asset/sprites/age2/eglise1.png"
+dest_files=["res://.godot/imported/eglise1.png-a03812707b65c2f61b80397e0a45ba47.ctex"]
 
 [params]
 

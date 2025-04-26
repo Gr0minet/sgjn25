@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
 [ext_resource type="PackedScene" uid="uid://dclnx6bpnb707" path="res://scenes/prefabs/block.tscn" id="2_x3t1k"]
-[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age1/pontpierre.png" id="3_ep14h"]
+[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age2/pontpierre.png" id="3_ep14h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(1066.37, 258.85)

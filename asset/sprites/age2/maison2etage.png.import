@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbwtpt6qqacgf"
-path="res://.godot/imported/colonne.png-1e859d729df94c97a7f94e2e64be8c6f.ctex"
+uid="uid://dafonujpmu3wy"
+path="res://.godot/imported/maison2etage.png-5d8a1fb071feae08ded09a18d44a6ba3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/age1/colonne.png"
-dest_files=["res://.godot/imported/colonne.png-1e859d729df94c97a7f94e2e64be8c6f.ctex"]
+source_file="res://asset/sprites/age2/maison2etage.png"
+dest_files=["res://.godot/imported/maison2etage.png-5d8a1fb071feae08ded09a18d44a6ba3.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_5e7t7"]
 [ext_resource type="PackedScene" uid="uid://dcem73ji3355r" path="res://scenes/prefabs/age1/maison-etage/block.tscn" id="1_hyavt"]
 [ext_resource type="PackedScene" uid="uid://c00wrhn2ni82o" path="res://scenes/prefabs/age1/maison-etage/moving_block.tscn" id="1_msxxo"]
-[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age1/maison2etage.png" id="2_34vo0"]
+[ext_resource type="Texture2D" uid="uid://dafonujpmu3wy" path="res://asset/sprites/age2/maison2etage.png" id="2_34vo0"]
 
 [resource]
 script = ExtResource("1_5e7t7")

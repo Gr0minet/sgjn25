@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjamn7nr2ahe7"]
 
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age1/pontpierre.png" id="2_23rbx"]
+[ext_resource type="Texture2D" uid="uid://bgpydxfe6hfel" path="res://asset/sprites/age2/pontpierre.png" id="2_23rbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(1076.36, 258.592)

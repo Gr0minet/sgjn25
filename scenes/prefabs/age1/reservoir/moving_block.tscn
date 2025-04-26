@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqsbnok0rgmgi"]
 
 [ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
-[ext_resource type="Texture2D" uid="uid://b1bfivqt1b3qj" path="res://asset/sprites/age1/reservoir.png" id="3_ymdk6"]
+[ext_resource type="Texture2D" uid="uid://b1bfivqt1b3qj" path="res://asset/sprites/age2/reservoir.png" id="3_ymdk6"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_2buo5"]
 points = PackedVector2Array(71.8311, 67.4108, 140.347, 405.57, 188.971, 405.57, 184.551, 456.404, -180.13, 454.194, -180.13, 407.78, -133.716, 403.359, -69.621, 69.621, -104.984, 36.4681, -104.984, -116.035, 107.194, -113.825, 107.194, 38.6783)

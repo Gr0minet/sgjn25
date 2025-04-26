@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://drxgflb8prlmo"]
 
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://b1bfivqt1b3qj" path="res://asset/sprites/age1/reservoir.png" id="2_frf5g"]
+[ext_resource type="Texture2D" uid="uid://b1bfivqt1b3qj" path="res://asset/sprites/age2/reservoir.png" id="2_frf5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frf5g"]
 size = Vector2(97.2483, 44.2037)

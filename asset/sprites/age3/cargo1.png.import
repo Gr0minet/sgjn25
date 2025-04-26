@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0q0clfymrkbv"
-path="res://.godot/imported/eglise1.png-7cb0f3482767605a347bc4498deff637.ctex"
+uid="uid://ddnutrdou0q7i"
+path="res://.godot/imported/cargo1.png-20113b9d5243a37c5b59bd4a73ac9713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/age1/eglise1.png"
-dest_files=["res://.godot/imported/eglise1.png-7cb0f3482767605a347bc4498deff637.ctex"]
+source_file="res://asset/sprites/age3/cargo1.png"
+dest_files=["res://.godot/imported/cargo1.png-20113b9d5243a37c5b59bd4a73ac9713.ctex"]
 
 [params]
 
