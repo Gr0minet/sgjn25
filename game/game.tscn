@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://h28v76d7qwyv" path="res://ui/ui.gd" id="4_4fuuu"]
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
-[ext_resource type="Texture2D" uid="uid://dkp5qeflxqkqt" path="res://asset/ui/fullscreen.png" id="9_vsp63"]
 [ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
 [ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="13_b686c"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
@@ -440,19 +439,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_qf6n1")
 }
 
-[node name="FullscreenButton" type="TextureButton" parent="UICanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("9_vsp63")
-
 [node name="BlocksBuilder" parent="." instance=ExtResource("19_pxxsx")]
 
 [node name="AgesMeter" type="Node2D" parent="."]
@@ -475,4 +461,3 @@ text = "1700"
 [node name="MusicManager" parent="." instance=ExtResource("10_j8tme")]
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]
-[connection signal="pressed" from="UICanvasLayer/UI/FullscreenButton" to="UICanvasLayer/UI" method="_on_fullscreen_button_pressed"]
