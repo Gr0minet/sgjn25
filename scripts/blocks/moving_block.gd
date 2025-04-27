@@ -11,6 +11,7 @@ signal place_block()
 
 @onready var inside_area: Area2D = $InsideArea
 @onready var shape: Shape2D = $CollisionShape2D.shape
+@onready var shape_collision: CollisionShape2D = $CollisionShape2D
 
 var opacity: float
 var is_connected := false
@@ -30,6 +31,7 @@ func _process(delta: float) -> void:
 	
 	if is_overlapping:
 		modulate = color_invalid
+		
 	elif is_connected:
 		modulate = color_valid
 	else:
@@ -47,3 +49,6 @@ func _input(event: InputEvent) -> void:
 	):
 		canceled.emit()
 		queue_free()
+
+func get_global_shape_transform() -> Transform2D:
+	return shape_collision.get_global_transform()

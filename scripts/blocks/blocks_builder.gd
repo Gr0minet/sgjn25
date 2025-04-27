@@ -40,8 +40,8 @@ func on_place_block(from: MovingBlock) -> void:
 
 
 func get_intersection(moving: MovingBlock, block: Block) -> PackedVector2Array:
-	var moving_transform = moving.get_global_transform()
-	var block_transform = block.get_global_transform()
+	var moving_transform = moving.get_global_shape_transform()
+	var block_transform = block.get_global_shape_transform()
 	
 	var collision := moving.shape.collide_and_get_contacts(
 		moving_transform,
