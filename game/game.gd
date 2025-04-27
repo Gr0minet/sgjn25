@@ -33,6 +33,14 @@ func _ready() -> void:
 	ground_level = ground.get_height()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("switch_fullscreen"):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED) 
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
 func _spawn_boat(spawn_x_position: float, boat_side: Boat.Side, pirate_boat: bool) -> void:
 	var boat: Boat = _boat_scene.instantiate()
 	boat.position.y = _boat_left_limit.position.y
@@ -42,7 +50,6 @@ func _spawn_boat(spawn_x_position: float, boat_side: Boat.Side, pirate_boat: boo
 	boat.income = BOAT_INCOME
 	boat.pirate = pirate_boat
 	
-	print(boat.direction, ", ", boat.side)
 	if boat_side == Boat.Side.LEFT:
 		boat.x_limit = _boat_left_limit.position.x
 	else:
