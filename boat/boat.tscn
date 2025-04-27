@@ -121,6 +121,7 @@ _data = {
 size = Vector2(148, 154)
 
 [node name="Boat" type="Node2D"]
+modulate = Color(0.437537, 0.354528, 0.179597, 1)
 z_index = 4
 script = ExtResource("1_enlnh")
 
@@ -151,6 +152,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickDetector"]
+visible = false
 shape = SubResource("RectangleShape2D_enlnh")
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
