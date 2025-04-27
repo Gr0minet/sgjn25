@@ -1,4 +1,4 @@
-# sgjn25
+# Les 357 années
 
 Code et assets du jeu en licence CC0
 
@@ -6,7 +6,7 @@ Fait en 48h dans le cadre de la [Scientific Game Jam 2025 à Nantes](https://itc
 
 Inspiré d'un sujet de thèse sur l'Octroi de mer.
 
-Raphaël Boulay https://www.artstation.com/raphaelboulay : Art
-Winnie Gotmilk https://winniegotmilk.com/ : Musique et SFX
-Clément Rivaille https://clementrivaille.fr/ : Programmation
-Grominet : Programmation
+- Raphaël Boulay https://www.artstation.com/raphaelboulay : Art
+- Winnie Gotmilk https://winniegotmilk.com/ : Musique et SFX
+- Clément Rivaille https://clementrivaille.fr/ : Programmation
+- Grominet : Programmation
