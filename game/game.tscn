@@ -335,9 +335,9 @@ vertical_alignment = 1
 [node name="BlueprintContainer" type="VBoxContainer" parent="UICanvasLayer/UI"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_top = 0.4
+anchor_bottom = 0.4
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -345,11 +345,11 @@ size_flags_vertical = 6
 [node name="BlueprintContainer2" type="VBoxContainer" parent="UICanvasLayer/UI"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 0.4
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 0.4
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 6
