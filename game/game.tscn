@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=25 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="Texture2D" uid="uid://dkp5qeflxqkqt" path="res://asset/ui/fullscreen.png" id="9_vsp63"]
 [ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
+[ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="13_b686c"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
@@ -217,6 +218,9 @@ load_path = "res://.godot/imported/exclamation.png-937a545c106b3e83b1f6746d2bcd8
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsp63"]
 load_path = "res://.godot/imported/exclamation.png-937a545c106b3e83b1f6746d2bcd8625.ctex"
+
+[sub_resource type="FontVariation" id="FontVariation_hb504"]
+base_font = ExtResource("13_b686c")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -459,12 +463,13 @@ bar_scene = ExtResource("21_dxwpq")
 ages_years = Array[String](["1700", "1800", "1900", "2000"])
 
 [node name="FirstYear" type="Label" parent="AgesMeter"]
-offset_left = 761.0
-offset_top = -95.0
-offset_right = 944.0
-offset_bottom = 15.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
+offset_left = 666.0
+offset_top = -164.0
+offset_right = 1001.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.01, 0.01, 0.01, 0.470588)
+theme_override_fonts/font = SubResource("FontVariation_hb504")
+theme_override_font_sizes/font_size = 160
 text = "1700"
 
 [node name="MusicManager" parent="." instance=ExtResource("10_j8tme")]

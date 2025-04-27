@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg7a0rt110yd5"]
+[gd_scene load_steps=5 format=3 uid="uid://cg7a0rt110yd5"]
 
 [ext_resource type="Script" uid="uid://dpmtc262adfmv" path="res://scripts/ages/age_bar.gd" id="1_6t784"]
 [ext_resource type="Texture2D" uid="uid://dyjegfywt6whk" path="res://asset/ligne_ages.png" id="2_ac4p4"]
+[ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="2_wp3cm"]
+
+[sub_resource type="FontVariation" id="FontVariation_cwpji"]
+base_font = ExtResource("2_wp3cm")
 
 [node name="AgeBar" type="Node2D"]
 script = ExtResource("1_6t784")
@@ -22,13 +26,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -188.0
-offset_top = -19.0
-offset_right = -5.0
-offset_bottom = 91.0
+offset_left = -284.035
+offset_top = -97.33
+offset_right = -11.035
+offset_bottom = 161.67
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(0.0117647, 0.0117647, 0.0117647, 0.470588)
+theme_override_fonts/font = SubResource("FontVariation_cwpji")
+theme_override_font_sizes/font_size = 160
 text = "1800"
 
 [node name="TextureRect" type="TextureRect" parent="Bar"]
