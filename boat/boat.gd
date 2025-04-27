@@ -9,8 +9,8 @@ signal leaved(side: Side)
 
 enum BoatState {ARRIVING, LEAVING, IDLE}
 
-const PIRATE_COLOR: Color = Color.DARK_RED
-const OFF_SCREEN_MARGIN: float = 50.0
+const PIRATE_COLOR: Color = Color.BLACK
+const OFF_SCREEN_MARGIN: float = 140.0
 const PIRATE_SPRITE: Texture2D = preload("uid://b1j855d1pv3fp")
 const IDLE_TIME: float = 1.0 # second
 const PIRATE_SPEED: float = 100.0 # pixel/second
