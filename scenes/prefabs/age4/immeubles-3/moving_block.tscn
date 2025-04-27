@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://brp685y01n7ph"]
+[gd_scene load_steps=5 format=3 uid="uid://up8o3cynjg23"]
 
-[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
-[ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="2_0yfy1"]
+[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_8n8ru"]
+[ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="2_ig0by"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(85, 202)
@@ -12,13 +12,13 @@ size = Vector2(75.2212, 331.858)
 [node name="MovingBlock" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
-script = ExtResource("1_dp5hw")
+script = ExtResource("1_8n8ru")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_0yfy1")
+texture = ExtResource("2_ig0by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 13)

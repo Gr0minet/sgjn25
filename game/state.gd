@@ -21,7 +21,7 @@ var AGES_COLOR: Array[Color] = [
 
 var current: State.Value
 var height_reached := 0.0
-var age := 0
+var age := 3
 var money: int = 0:
 	set(value):
 		money = value

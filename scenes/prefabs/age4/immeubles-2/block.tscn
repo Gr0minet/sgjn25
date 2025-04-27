@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciftk73b3rdxm"]
+[gd_scene load_steps=8 format=3 uid="uid://dekwbchbkjev5"]
 
-[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_iigh6"]
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_1xvem"]
+[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_nhd6r"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mn41l"]
 points = PackedVector2Array(-5, -110.5, -60, -110.5, -60, 109.5, 57, 108.5, 52, 8.5, 0, 8.5)
@@ -20,11 +20,11 @@ size = Vector2(54.5, 73.5)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 3
-script = ExtResource("1_ychud")
+script = ExtResource("1_1xvem")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_iigh6")
+texture = ExtResource("2_nhd6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

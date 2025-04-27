@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://bi6sya5nddlg5"]
+
+[ext_resource type="PackedScene" uid="uid://dekwbchbkjev5" path="res://scenes/prefabs/age4/immeubles-2/block.tscn" id="1_t5ewj"]
+[ext_resource type="PackedScene" uid="uid://bvkyjbsjqq42s" path="res://scenes/prefabs/age4/immeubles-2/moving_block.tscn" id="2_ms8pb"]
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="3_djs4q"]
+[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="4_t5ewj"]
+
+[resource]
+script = ExtResource("3_djs4q")
+price = 280
+sprite = ExtResource("4_t5ewj")
+moving_block_scene = ExtResource("2_ms8pb")
+block_scene = ExtResource("1_t5ewj")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"
