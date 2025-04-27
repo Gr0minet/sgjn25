@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=36 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -233,6 +233,9 @@ base_font = ExtResource("9_5e03w")
 
 [sub_resource type="FontVariation" id="FontVariation_hb504"]
 base_font = ExtResource("13_b686c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e03w"]
+size = Vector2(7680, 200)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_h7iqs")
@@ -520,5 +523,11 @@ stream = ExtResource("21_q52ks")
 
 [node name="BlockPlacedStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
 stream = ExtResource("20_8bboj")
+
+[node name="BottomFloor" type="StaticBody2D" parent="."]
+position = Vector2(996, 1249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomFloor"]
+shape = SubResource("RectangleShape2D_5e03w")
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]
