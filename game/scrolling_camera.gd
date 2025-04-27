@@ -2,7 +2,7 @@ class_name ScrollingCamera
 extends Node2D
 
 
-const SPEED: float = 20.0 # pixel/mouse_scroll
+const SPEED: float = 40.0 # pixel/mouse_scroll
 
 
 @onready var _camera_focus: Marker2D = $CameraFocus
