@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brp685y01n7ph"]
+[gd_scene load_steps=6 format=3 uid="uid://bldm50ifopjlh"]
 
-[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_dp5hw"]
-[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_7udkp"]
+[ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_onxmf"]
+[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_3n8vs"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_aowr1"]
 points = PackedVector2Array(-5, -110.5, -60, -110.5, -60, 109.5, 57, 108.5, 52, 8.5, 0, 8.5)
@@ -15,13 +15,13 @@ size = Vector2(130.531, 126.106)
 [node name="MovingBlock2" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
 collision_layer = 3
-script = ExtResource("1_dp5hw")
+script = ExtResource("1_onxmf")
 color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.78, 0.78)
-texture = ExtResource("2_7udkp")
+texture = ExtResource("2_3n8vs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

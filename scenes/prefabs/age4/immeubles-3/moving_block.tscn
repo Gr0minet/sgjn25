@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://brp685y01n7ph"]
+[gd_scene load_steps=5 format=3 uid="uid://b1kiarukyj3tq"]
 
 [ext_resource type="Script" uid="uid://bmiga8ptfxmwp" path="res://scripts/blocks/moving_block.gd" id="1_8n8ru"]
 [ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="2_ig0by"]

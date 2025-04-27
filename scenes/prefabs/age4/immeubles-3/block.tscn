@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciftk73b3rdxm"]
+[gd_scene load_steps=7 format=3 uid="uid://7wuamv75vmgx"]
 
-[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
-[ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="2_vlv8v"]
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_vqsgl"]
+[ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="2_24mxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
 size = Vector2(152, 203.885)
@@ -17,7 +17,7 @@ size = Vector2(118.5, 35.25)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 3
-script = ExtResource("1_ychud")
+script = ExtResource("1_vqsgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 36.5)
@@ -26,7 +26,7 @@ shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.78, 0.78)
-texture = ExtResource("2_vlv8v")
+texture = ExtResource("2_24mxy")
 
 [node name="StickZone" type="Area2D" parent="."]
 scale = Vector2(2.97717, 2.97717)

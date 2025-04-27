@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://c5altbwkqh8l3"]
 
-[ext_resource type="PackedScene" uid="uid://cu6ha6epwx0qg" path="res://scenes/prefabs/age4/immeubles-3/block.tscn" id="1_y4ncm"]
-[ext_resource type="PackedScene" uid="uid://up8o3cynjg23" path="res://scenes/prefabs/age4/immeubles-3/moving_block.tscn" id="2_ygkxd"]
+[ext_resource type="PackedScene" uid="uid://7wuamv75vmgx" path="res://scenes/prefabs/age4/immeubles-3/block.tscn" id="1_y4ncm"]
+[ext_resource type="PackedScene" uid="uid://b1kiarukyj3tq" path="res://scenes/prefabs/age4/immeubles-3/moving_block.tscn" id="2_ygkxd"]
 [ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="3_0yicq"]
 [ext_resource type="Texture2D" uid="uid://c7w4ibcdkfryx" path="res://asset/sprites/age4/immeuble3_3.png" id="4_y4ncm"]
 
