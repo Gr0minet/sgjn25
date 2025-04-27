@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_xm4f6")
-price = 100
+price = 200
 sprite = ExtResource("2_qcllg")
 moving_block_scene = ExtResource("1_i8hlt")
 block_scene = ExtResource("1_awy4d")

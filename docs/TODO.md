@@ -1,6 +1,8 @@
 # TODO
 
-- limite du top scroll en fonction du top de la tour
+- credits au bout d'une certaine hauteur
+- mettre une couleur aux bateaux marchands
+- ajout resources age 2 et 3
 - hélicoptère 
 - flèche qui indique ennemie + animation
 

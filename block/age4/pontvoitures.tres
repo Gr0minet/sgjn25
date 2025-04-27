@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://hy58p4ko32xo"]
+
+[ext_resource type="PackedScene" uid="uid://dmhreoer4n536" path="res://scenes/prefabs/age4/pontvoitures/block.tscn" id="1_08j83"]
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_fm67b"]
+[ext_resource type="PackedScene" uid="uid://dar1rdc8oes05" path="res://scenes/prefabs/age4/pontvoitures/moving_block.tscn" id="2_38tf0"]
+[ext_resource type="Texture2D" uid="uid://wufrbthfdut1" path="res://asset/sprites/age4/pont_voiture3.png" id="4_38tf0"]
+
+[resource]
+script = ExtResource("1_fm67b")
+price = 160
+sprite = ExtResource("4_38tf0")
+moving_block_scene = ExtResource("2_38tf0")
+block_scene = ExtResource("1_08j83")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

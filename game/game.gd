@@ -4,7 +4,7 @@ extends Node2D
 enum PlayState {IDLE, PLACING_BLUEPRINT}
 
 const PIRATE_PROBABILITY: int = 5 # 1/PIRATE_PROBABILITY of boats will be pirate
-const BOAT_INCOME: int = 100 # euro
+const BOAT_INCOME: int = 200 # euro
 const BOAT_RESPAWN_TIME_MIN: float = 0.5 # seconds
 const BOAT_RESPAWN_TIME_MAX: float = 1.5 # seconds
 const BOAT_SPAWN_POSITION_FROM_SCREEN_BORDER: float = 50 # pixels
@@ -117,9 +117,13 @@ func _on_blueprint_clicked(block_resource: BlockResource) -> void:
 func _on_moving_block_canceled() -> void:
 	_play_state = PlayState.IDLE
 
-func _on_block_placed(price: int, block: Block) -> void:
-	State.money -= price
+func _on_block_placed(price: int, block: Block, fail: bool) -> void:
 	_play_state = PlayState.IDLE
+	
+	if fail:
+		true
+	
+	State.money -= price
 	
 	var block_height := absf(ground_level - block.get_height())
 	if block_height > State.height_reached:

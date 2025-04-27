@@ -14,7 +14,7 @@ const PIRATE_SPRITE: Texture2D = preload("uid://b1j855d1pv3fp")
 const IDLE_TIME: float = 1.0 # second
 const PIRATE_SPEED: float = 100.0 # pixel/second
 const NORMAL_SPEED: float = 300.0 # pixel/second
-const PIRATE_MALUS: int = 100 # euro
+const PIRATE_MALUS: int = 300 # euro
 
 @onready var _sprite_2d: Sprite2D = $Sprite2D
 @onready var _idle_timer: Timer = $IdleTimer

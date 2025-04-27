@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://l6aa4lpjx4g2"]
+
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_0i4fb"]
+[ext_resource type="PackedScene" uid="uid://dfdi75nkie7rs" path="res://scenes/prefabs/age2/colonne/block.tscn" id="1_fwk2n"]
+[ext_resource type="PackedScene" uid="uid://d1q4emvnnldss" path="res://scenes/prefabs/age2/colonne/moving_block.tscn" id="2_ttr1i"]
+[ext_resource type="Texture2D" uid="uid://cbwtpt6qqacgf" path="res://asset/sprites/age2/colonne.png" id="4_ttr1i"]
+
+[resource]
+script = ExtResource("1_0i4fb")
+price = 300
+sprite = ExtResource("4_ttr1i")
+moving_block_scene = ExtResource("2_ttr1i")
+block_scene = ExtResource("1_fwk2n")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

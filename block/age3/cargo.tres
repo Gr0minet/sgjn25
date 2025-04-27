@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://dih6q1jktkla3"]
+
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_iehjq"]
+[ext_resource type="PackedScene" uid="uid://c46n8qlliwaoe" path="res://scenes/prefabs/age3/cargo/block.tscn" id="1_j4orw"]
+[ext_resource type="PackedScene" uid="uid://cxmjwauh5as2u" path="res://scenes/prefabs/age3/cargo/moving_block.tscn" id="2_nrai6"]
+[ext_resource type="Texture2D" uid="uid://ddnutrdou0q7i" path="res://asset/sprites/age3/cargo1.png" id="4_nrai6"]
+
+[resource]
+script = ExtResource("1_iehjq")
+price = 80
+sprite = ExtResource("4_nrai6")
+moving_block_scene = ExtResource("2_nrai6")
+block_scene = ExtResource("1_j4orw")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

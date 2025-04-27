@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://d2d3w88vjpas7"]
+
+[ext_resource type="PackedScene" uid="uid://bp5ocevid7vjt" path="res://scenes/prefabs/age4/avion/block.tscn" id="1_ko6dl"]
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_u8e81"]
+[ext_resource type="PackedScene" uid="uid://dnngqy0pojca7" path="res://scenes/prefabs/age4/avion/moving_block.tscn" id="2_3ri5c"]
+[ext_resource type="Texture2D" uid="uid://bsdb67v57k33h" path="res://asset/sprites/age4/avion3.png" id="4_3ri5c"]
+
+[resource]
+script = ExtResource("1_u8e81")
+price = 80
+sprite = ExtResource("4_3ri5c")
+moving_block_scene = ExtResource("2_3ri5c")
+block_scene = ExtResource("1_ko6dl")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

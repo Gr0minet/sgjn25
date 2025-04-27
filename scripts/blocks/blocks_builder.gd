@@ -9,7 +9,11 @@ signal block_placed(price: int, block: Block)
 @onready var blocks_parent: Node = $Blocks
 
 func on_place_block(from: MovingBlock) -> void:
-	var position = from.global_position
+	if not from.has_overlapping_bodies():
+		block_placed.emit(0, null, true)
+		return
+		
+	var position = from.global_position	
 	var target: Block = from.get_overlapping_bodies()[0]
 	var intersect_points := get_intersection(from, target)
 	
@@ -32,7 +36,7 @@ func on_place_block(from: MovingBlock) -> void:
 		joints_stacks.add_child(joint)
 		
 	from.queue_free()
-	block_placed.emit(from.block_resource.price, new_block)
+	block_placed.emit(from.block_resource.price, new_block, false)
 
 
 func get_intersection(moving: MovingBlock, block: Block) -> PackedVector2Array:

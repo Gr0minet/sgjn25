@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://c8rplxowmfvth"]
+
+[ext_resource type="PackedScene" uid="uid://ci2om3houf4e5" path="res://scenes/prefabs/age2/eglise/block.tscn" id="1_cjdud"]
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_kp1nm"]
+[ext_resource type="PackedScene" uid="uid://dv2y4dav57nph" path="res://scenes/prefabs/age2/eglise/moving_block.tscn" id="2_qwl2u"]
+[ext_resource type="Texture2D" uid="uid://c0q0clfymrkbv" path="res://asset/sprites/age2/eglise1.png" id="4_qwl2u"]
+
+[resource]
+script = ExtResource("1_kp1nm")
+price = 130
+sprite = ExtResource("4_qwl2u")
+moving_block_scene = ExtResource("2_qwl2u")
+block_scene = ExtResource("1_cjdud")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockResource" load_steps=5 format=3 uid="uid://tlvqhli145yd"]
+
+[ext_resource type="Script" uid="uid://bss3pmeqp8ycc" path="res://block/block_resource.gd" id="1_5fsmd"]
+[ext_resource type="PackedScene" uid="uid://b7mdkcs0x53wt" path="res://scenes/prefabs/age4/eoliennes/block.tscn" id="1_82551"]
+[ext_resource type="PackedScene" uid="uid://dsct7u51obbb1" path="res://scenes/prefabs/age4/eoliennes/moving_block.tscn" id="2_vlnp8"]
+[ext_resource type="Texture2D" uid="uid://ck1t076f0tmtx" path="res://asset/sprites/age4/eoliennes3.png" id="4_vlnp8"]
+
+[resource]
+script = ExtResource("1_5fsmd")
+price = 80
+sprite = ExtResource("4_vlnp8")
+moving_block_scene = ExtResource("2_vlnp8")
+block_scene = ExtResource("1_82551")
+metadata/_custom_type_script = "uid://bss3pmeqp8ycc"
