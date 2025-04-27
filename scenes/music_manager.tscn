@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5s30hn4t45g1"]
+[gd_scene load_steps=20 format=3 uid="uid://b5s30hn4t45g1"]
 
 [ext_resource type="Script" uid="uid://do0otqj4ol8m6" path="res://scripts/music_manager.gd" id="1_tn5dr"]
 [ext_resource type="Script" uid="uid://blgus00hdalsd" path="res://scripts/music_layer.gd" id="2_jbem4"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c4fgnh7ysffd6" path="res://asset/music/34ArpRythm_8+1_96.ogg" id="11_smbxl"]
 [ext_resource type="AudioStream" uid="uid://cawgbbsjgoxau" path="res://asset/music/4PhasePlantPerc_8+1_96.ogg" id="12_trwbn"]
 [ext_resource type="AudioStream" uid="uid://vcnbw6d4pm18" path="res://asset/music/4ExtraDrums_8+1_96.ogg" id="13_8rps1"]
+[ext_resource type="AudioStream" uid="uid://l8ex1ob0jlgg" path="res://asset/music/TransitionWinAge.ogg" id="14_l62sp"]
 
 [sub_resource type="Resource" id="Resource_hu6vc"]
 script = ExtResource("2_jbem4")
@@ -69,3 +70,8 @@ layers = Array[ExtResource("2_jbem4")]([SubResource("Resource_hu6vc"), SubResour
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_hetdf")
+bus = &"Music"
+
+[node name="AgeCue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_l62sp")
+bus = &"Music"

@@ -2,6 +2,7 @@ extends Node2D
 class_name MusicManager
 
 @onready var player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var age_cue: AudioStreamPlayer = $AgeCue
 
 @export var fade_duration := 2.0
 @export var layers: Array[MusicLayer]
@@ -17,6 +18,7 @@ func _ready() -> void:
 		
 	State.update_age.connect(activate_layer)
 	State.game_started.connect(start_music)
+	State.update_age.connect(play_age_cue)
 
 func activate_layer(layer_idx: int):
 	if layer_idx >= State.MAX_AGE:
@@ -34,3 +36,6 @@ func set_layer_volume(volume: float, layer: MusicLayer):
 func start_music():
 	syncstream.set_sync_stream_volume(0, 0.0);
 	player.play()
+	
+func play_age_cue(_age: int):
+	age_cue.play()
