@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciftk73b3rdxm"]
+
+[ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_ychud"]
+[ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_iigh6"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mn41l"]
+points = PackedVector2Array(-5, -110.5, -60, -110.5, -60, 109.5, 57, 108.5, 52, 8.5, 0, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
+size = Vector2(25, 216.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iigh6"]
+size = Vector2(25, 114.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
+size = Vector2(54.5, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn41l"]
+size = Vector2(54.5, 73.5)
+
+[node name="Block" type="RigidBody2D"]
+collision_layer = 3
+script = ExtResource("1_ychud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_iigh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("ConvexPolygonShape2D_mn41l")
+
+[node name="StickZone" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-46.5, 0.75)
+shape = SubResource("RectangleShape2D_ychud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-19, -51.1875)
+shape = SubResource("RectangleShape2D_iigh6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(-32.25, -99.5)
+shape = SubResource("RectangleShape2D_nsj6n")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StickZone"]
+position = Vector2(24, 46)
+shape = SubResource("RectangleShape2D_mn41l")
