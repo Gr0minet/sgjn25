@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ck1t076f0tmtx" path="res://asset/sprites/age4/eoliennes3.png" id="2_brhvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ro6f"]
-size = Vector2(155, 11.5)
+size = Vector2(152.503, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
-size = Vector2(241.15, 312.478)
+size = Vector2(241.15, 252.978)
 
 [node name="MovingBlock" type="Area2D"]
 modulate = Color(1, 1, 1, 0.505882)
@@ -17,17 +17,19 @@ color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.492, 0.492)
 texture = ExtResource("2_brhvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 97.75)
+position = Vector2(0, 185)
+scale = Vector2(2.03189, 2.03189)
 shape = SubResource("RectangleShape2D_8ro6f")
 
 [node name="InsideArea" type="Area2D" parent="."]
+scale = Vector2(2.03189, 2.03189)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
-position = Vector2(5.5, 22.62)
+position = Vector2(5.42192, 10.2518)
 scale = Vector2(0.452, 0.452)
 shape = SubResource("RectangleShape2D_5s5wv")

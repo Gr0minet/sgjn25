@@ -7,7 +7,7 @@
 size = Vector2(186, 206)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsj6n"]
-size = Vector2(175, 17)
+size = Vector2(169.545, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2oaxh"]
 size = Vector2(40, 11)
@@ -21,19 +21,22 @@ script = ExtResource("1_ychud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
+scale = Vector2(1.92175, 1.92175)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.49157, 0.49157)
 texture = ExtResource("2_2oaxh")
 
 [node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(1.92175, 1.92175)
 collision_layer = 3
 collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(0.5, 94.5)
+position = Vector2(2.45955, 94.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nsj6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickZone"]

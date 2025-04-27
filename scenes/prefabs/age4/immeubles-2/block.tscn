@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dekwbchbkjev5"]
+[gd_scene load_steps=8 format=3 uid="uid://ciftk73b3rdxm"]
 
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="1_1xvem"]
 [ext_resource type="Texture2D" uid="uid://b5mptd0d7m24d" path="res://asset/sprites/age4/immeuble3_2.png" id="2_nhd6r"]
@@ -23,14 +23,16 @@ collision_layer = 3
 script = ExtResource("1_1xvem")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.78, 0.78)
 texture = ExtResource("2_nhd6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
+scale = Vector2(3.00707, 2.99221)
 shape = SubResource("ConvexPolygonShape2D_mn41l")
 
 [node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(3.00707, 2.99221)
 collision_layer = 3
 collision_mask = 2
 monitoring = false
@@ -48,5 +50,5 @@ position = Vector2(-32.25, -99.5)
 shape = SubResource("RectangleShape2D_nsj6n")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StickZone"]
-position = Vector2(24, 46)
+position = Vector2(24.2761, 46.1198)
 shape = SubResource("RectangleShape2D_mn41l")

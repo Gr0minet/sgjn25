@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://wufrbthfdut1" path="res://asset/sprites/age4/pont_voiture3.png" id="2_p76cf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(296, 153)
+size = Vector2(296, 141.47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
-size = Vector2(559.734, 179.735)
+size = Vector2(559.734, 117.99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4odm"]
 size = Vector2(226, 62)
@@ -20,18 +20,20 @@ color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 14.5)
+position = Vector2(5, 32)
+scale = Vector2(2.30664, 2.30664)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.554, 0.554)
 texture = ExtResource("2_p76cf")
 
 [node name="InsideArea" type="Area2D" parent="."]
+scale = Vector2(2.30664, 2.30664)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]
-position = Vector2(3.5, 12)
+position = Vector2(3.5, -1.95443)
 scale = Vector2(0.452, 0.452)
 shape = SubResource("RectangleShape2D_5s5wv")
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://y4j37vnonyeg" path="res://asset/sprites/age4/immeuble3.png" id="2_b1hj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(136, 202)
+size = Vector2(136, 202.667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
 size = Vector2(20, 199.5)
@@ -20,14 +20,16 @@ collision_layer = 3
 script = ExtResource("1_ychud")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.78, 0.78)
 texture = ExtResource("2_b1hj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -1)
+position = Vector2(-6, -2.27374e-13)
+scale = Vector2(3.03268, 3.00777)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="StickZone" type="Area2D" parent="."]
+scale = Vector2(3.03268, 3.00777)
 collision_layer = 3
 collision_mask = 2
 monitoring = false
