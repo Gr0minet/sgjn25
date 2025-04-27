@@ -78,7 +78,9 @@ func _setup_block_resource_list() -> void:
 		var base_path: String = BLOCK_RESOURCE_FOLDER + "/" + directory_name
 		var age_folder: DirAccess = DirAccess.open(base_path)
 		for block_resource_file: String in age_folder.get_files():
-			var block_resource: BlockResource = ResourceLoader.load(base_path + "/" + block_resource_file, "BlockResource")
+			if '.tres.remap' in block_resource_file:
+				block_resource_file = block_resource_file.trim_suffix('.remap')
+			var block_resource: BlockResource = ResourceLoader.load(base_path + "/" + block_resource_file)
 			age_block_list.append(block_resource)
 		_block_resource_list.append(age_block_list)
 
