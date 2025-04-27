@@ -10,7 +10,7 @@ const BLUEPRINT_SCENE: PackedScene = preload("uid://bi7q5vvl3qlba")
 @onready var _money_label: Label = %MoneyLabel
 @onready var _blueprint_container: VBoxContainer = %BlueprintContainer
 @onready var _blueprint_container_2: VBoxContainer = %BlueprintContainer2
-@onready var _start_label: Label = %StartLabel
+@onready var _start_screen: Control = $TitleScreen
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _money_malus: Label = %MoneyMalus
 @onready var _warning_left: TextureRect = %WarningLeft
@@ -25,7 +25,7 @@ func _ready() -> void:
 	_money_label.hide()
 	_blueprint_container.hide()
 	_blueprint_container_2.hide()
-	_start_label.show()
+	_start_screen.show()
 	_warning_left.hide()
 	_warning_right.hide()
 	
@@ -55,7 +55,9 @@ func _start_game() -> void:
 	_money_label.show()
 	_blueprint_container.show()
 	_blueprint_container_2.show()
-	_start_label.hide()
+	
+	create_tween().tween_property(_start_screen, "modulate", Color(Color.WHITE, 0.0), 0.5)
+	
 	State.start_game()
 
 
