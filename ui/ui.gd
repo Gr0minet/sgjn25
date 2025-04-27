@@ -115,3 +115,10 @@ func _on_pirate_spawned(side: Boat.Side) -> void:
 		_warning_left_animation_player.play("warning_left")
 	else:
 		_warning_right_animation_player.play("warning_right")
+
+
+func _on_fullscreen_button_pressed() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED) 
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
