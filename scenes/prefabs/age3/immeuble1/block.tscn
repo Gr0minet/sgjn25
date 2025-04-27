@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fme4uyysfoq2" path="res://asset/sprites/age3/immeuble2_3.png" id="2_kr3ry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(142, 377)
+size = Vector2(142, 379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
 size = Vector2(33, 373.5)
