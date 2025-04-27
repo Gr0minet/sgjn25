@@ -1,7 +1,5 @@
 # TODO
 
-- credits au bout d'une certaine hauteur
-- mettre une couleur aux bateaux marchands
 - hélicoptère 
 - flèche qui indique ennemie + animation
 

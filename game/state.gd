@@ -9,7 +9,7 @@ signal game_started
 signal money_changed(new_value: int)
 
 enum Value {MAIN_MENU, PLAYING}
-var AGE_HEIGHT := 200.0
+var AGE_HEIGHT := 1000.0
 var MAX_AGE = 3
 
 var AGES_COLOR: Array[Color] = [
