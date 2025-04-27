@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=32 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -11,9 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
 [ext_resource type="PackedScene" uid="uid://bxvy8xyxtnyk6" path="res://scenes/prefabs/credit_bar.tscn" id="11_b686c"]
 [ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="13_b686c"]
+[ext_resource type="Script" uid="uid://brblcj81p1d5v" path="res://game/sfx_manager.gd" id="15_hb504"]
+[ext_resource type="AudioStream" uid="uid://ducs2cpa1fado" path="res://asset/sfx/MoneyGet2.ogg" id="16_dxwpq"]
+[ext_resource type="AudioStream" uid="uid://fh5ymmdel8pv" path="res://asset/sfx/PirateMoneyLose.ogg" id="17_mhvfb"]
+[ext_resource type="AudioStream" uid="uid://bnjmybsp0qsl0" path="res://asset/sfx/BateauCoulé.ogg" id="18_5e03w"]
+[ext_resource type="AudioStream" uid="uid://ctn3xueapjrma" path="res://asset/sfx/PirateApproach2.ogg" id="19_leid8"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
+[ext_resource type="AudioStream" uid="uid://cc4dl2jvokbqa" path="res://asset/sfx/BuildingDrag2.ogg" id="20_8bboj"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
 [ext_resource type="Script" uid="uid://6vavb44ppf2q" path="res://scripts/ages/ages_meter.gd" id="21_mhvfb"]
+[ext_resource type="AudioStream" uid="uid://dbj3wljs5ixis" path="res://asset/sfx/BuildingBuild.ogg" id="21_q52ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dakft"]
 size = Vector2(547, 29)
@@ -461,5 +468,26 @@ theme_override_font_sizes/font_size = 160
 text = "1700"
 
 [node name="MusicManager" parent="." instance=ExtResource("10_j8tme")]
+
+[node name="SFXManager" type="Node" parent="."]
+script = ExtResource("15_hb504")
+
+[node name="GetMoneyStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("16_dxwpq")
+
+[node name="LoseMoneyStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("17_mhvfb")
+
+[node name="ShipSinkedStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("18_5e03w")
+
+[node name="PirateApproachStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("19_leid8")
+
+[node name="BlockBuildStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("21_q52ks")
+
+[node name="BlockPlacedStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("20_8bboj")
 
 [connection signal="timeout" from="BoatSpawnTimer" to="." method="_on_boat_spawn_timer_timeout"]

@@ -5,7 +5,10 @@ signal update_age(age: int)
 signal pirated(amount: int)
 signal pirate_spawned(side: Boat.Side)
 signal game_started
-
+signal earn_money()
+signal ship_sinked()
+signal block_taken()
+signal block_placed()
 signal money_changed(new_value: int)
 
 enum Value {MAIN_MENU, PLAYING}

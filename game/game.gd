@@ -99,6 +99,7 @@ func _on_boat_docked(pirate: bool, amount: int) -> void:
 		State.pirated.emit(amount)
 	else:
 		State.money += amount
+		State.earn_money.emit()
 
 
 func _on_boat_leaved(side: Boat.Side) -> void:
@@ -113,6 +114,7 @@ func _on_blueprint_clicked(block_resource: BlockResource) -> void:
 	if _play_state != PlayState.IDLE:
 		return
 	
+	State.block_taken.emit()
 	_play_state = PlayState.PLACING_BLUEPRINT
 	var moving_block: MovingBlock = block_resource.moving_block_scene.instantiate()
 	moving_block.block_resource = block_resource
@@ -129,6 +131,7 @@ func _on_block_placed(price: int, block: Block, fail: bool) -> void:
 	
 	if fail: return
 	
+	State.block_placed.emit()
 	State.money -= price
 	
 	var block_height := absf(ground_level - block.get_height())

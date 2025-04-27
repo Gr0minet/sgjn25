@@ -95,6 +95,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
 		and (event as InputEventMouseButton).pressed
 	):
+		State.ship_sinked.emit()
 		set_physics_process(false)
 		_click_detector.input_pickable = false
 		_animation_player.play("die")
