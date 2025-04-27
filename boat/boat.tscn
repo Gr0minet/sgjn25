@@ -147,6 +147,8 @@ libraries = {
 }
 
 [node name="ClickDetector" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickDetector"]
 shape = SubResource("RectangleShape2D_enlnh")
