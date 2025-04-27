@@ -1,7 +1,7 @@
 extends Node2D
 class_name BlocksBuilder
 
-signal block_placed(price: int, block: Block)
+signal block_placed(price: int, block: Block, fail: bool)
 
 @export var joint_scene: PackedScene
 
