@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnwbhqiad84x5" path="res://asset/sprites/age3/imeeuble2_3.png" id="2_pag8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_018dn"]
-size = Vector2(94, 283)
+size = Vector2(94, 292.224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5wv"]
 size = Vector2(54, 218)
@@ -17,14 +17,16 @@ color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.359, 0.359)
 texture = ExtResource("2_pag8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14)
+position = Vector2(0, 20.4256)
+scale = Vector2(1.39328, 1.38495)
 shape = SubResource("RectangleShape2D_018dn")
 
 [node name="InsideArea" type="Area2D" parent="."]
+scale = Vector2(1.39328, 1.39328)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]

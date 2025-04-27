@@ -17,14 +17,16 @@ color_invalid = Color(0.7, 0.27335, 0.217, 1)
 color_valid = Color(0.58438, 0.553385, 0.976884, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.338602, 0.338602)
 texture = ExtResource("2_y5ynk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13.5)
+scale = Vector2(1.35441, 1.35441)
 shape = SubResource("RectangleShape2D_1i5wp")
 
 [node name="InsideArea" type="Area2D" parent="."]
+scale = Vector2(1.35441, 1.35441)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideArea"]

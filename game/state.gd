@@ -38,6 +38,7 @@ func set_height_reached(height: float):
 
 
 func start_game():
+	money = 0
 	current = State.Value.PLAYING
 	game_started.emit()
 
