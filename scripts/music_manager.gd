@@ -21,7 +21,7 @@ func _ready() -> void:
 	State.update_age.connect(play_age_cue)
 
 func activate_layer(layer_idx: int):
-	if layer_idx >= State.MAX_AGE:
+	if layer_idx > State.MAX_AGE:
 		return
 	var layer := layers[layer_idx]
 	var fade_tween = create_tween()
