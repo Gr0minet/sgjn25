@@ -9,7 +9,7 @@ signal game_started
 signal money_changed(new_value: int)
 
 enum Value {MAIN_MENU, PLAYING}
-var AGE_HEIGHT := 1400.0
+var AGE_HEIGHT := 200.0
 var MAX_AGE = 3
 
 var AGES_COLOR: Array[Color] = [
@@ -32,7 +32,7 @@ func set_height_reached(height: float):
 	height_reached = height
 	update_height_reached.emit(height)
 	
-	if height_reached > (float(age + 1) * AGE_HEIGHT) && age < MAX_AGE:
+	if height_reached > (float(age + 1) * AGE_HEIGHT) and age <= MAX_AGE:
 		age += 1
 		update_age.emit(age)
 

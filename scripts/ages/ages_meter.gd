@@ -1,12 +1,14 @@
 extends Node2D
 class_name AgeMeter
 
+@export var credit_bar_scene: PackedScene
 @export var bar_scene: PackedScene
 @export var ages_years: Array[String]
 
 @onready var first_year: Label = $FirstYear
 
 var bars: Array[AgeBar] = []
+var _credit_bar: AgeBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +24,12 @@ func _ready() -> void:
 		age_bar.position.y = -State.AGE_HEIGHT * (index + 1)
 		add_child(age_bar)
 		bars.append(age_bar)
+	var credit_bar = credit_bar_scene.instantiate()
+	credit_bar.date_txt = "Merci d'avoir joué !"
+	credit_bar.position.y = -State.AGE_HEIGHT * (high_ages.size() + 1)
+	add_child(credit_bar)
+	bars.append(credit_bar)
+	_credit_bar = credit_bar
 		
 	State.update_age.connect(on_new_age)
 	State.game_started.connect(on_start_game)
@@ -29,6 +37,7 @@ func _ready() -> void:
 func on_new_age(age: int):
 	var bar = bars[age - 1];
 	bar.activate()
+	
 	
 func on_start_game():
 	var tween = create_tween()

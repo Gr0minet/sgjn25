@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxvy8xyxtnyk6"]
+
+[ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="1_df42l"]
+[ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="2_qv4i5"]
+
+[sub_resource type="FontVariation" id="FontVariation_cwpji"]
+base_font = ExtResource("2_qv4i5")
+
+[node name="CreditBar" instance=ExtResource("1_df42l")]
+
+[node name="Date" parent="Bar" index="0"]
+theme_override_fonts/font = SubResource("FontVariation_cwpji")
+text = "Merci d'avoir joué !"
+
+[node name="Credits" type="Label" parent="Bar" index="1"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -880.0
+offset_top = -815.0
+offset_right = 472.0
+offset_bottom = -71.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.0117647, 0.0117647, 0.0117647, 0.470588)
+theme_override_fonts/font = SubResource("FontVariation_cwpji")
+theme_override_font_sizes/font_size = 80
+text = "Fait par:
+Raphaël Boulay: Art
+Winnie Gotmilk: Musique
+Clément Rivaille: Programmation
+Grominet: Programmation"

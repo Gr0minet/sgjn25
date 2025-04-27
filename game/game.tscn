@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://4wgt40dcxfbq"]
+[gd_scene load_steps=25 format=3 uid="uid://4wgt40dcxfbq"]
 
 [ext_resource type="Script" uid="uid://dfd2t4cn2rato" path="res://game/game.gd" id="1_h7iqs"]
 [ext_resource type="Texture2D" uid="uid://b5vpu7ex1iuw6" path="res://asset/background.png" id="1_vasa2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://7cqmnryer7p4" path="res://scripts/blocks/block.gd" id="4_u5opy"]
 [ext_resource type="Script" uid="uid://bqrmuedx4bvxm" path="res://game/scrolling_camera.gd" id="5_u8s88"]
 [ext_resource type="PackedScene" uid="uid://b5s30hn4t45g1" path="res://scenes/music_manager.tscn" id="10_j8tme"]
+[ext_resource type="PackedScene" uid="uid://bxvy8xyxtnyk6" path="res://scenes/prefabs/credit_bar.tscn" id="11_b686c"]
 [ext_resource type="FontFile" uid="uid://7x1es8q1c5s0" path="res://asset/fonts/VINERITC.TTF" id="13_b686c"]
 [ext_resource type="PackedScene" uid="uid://dmm2l8djyh48h" path="res://scenes/blocks_builder.tscn" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cg7a0rt110yd5" path="res://scenes/prefabs/age_bar.tscn" id="21_dxwpq"]
@@ -445,6 +446,7 @@ libraries = {
 z_index = -5
 position = Vector2(960, 940)
 script = ExtResource("21_mhvfb")
+credit_bar_scene = ExtResource("11_b686c")
 bar_scene = ExtResource("21_dxwpq")
 ages_years = Array[String](["1700", "1800", "1900", "2000"])
 
