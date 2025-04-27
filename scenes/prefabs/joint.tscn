@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://g2nr27scdv7" path="res://asset/sprites/prototype/joint-debug.png" id="1_p10ac"]
 
 [node name="Joint" type="PinJoint2D"]
-softness = 1.32
+softness = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

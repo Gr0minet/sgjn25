@@ -127,8 +127,7 @@ func _on_moving_block_canceled() -> void:
 func _on_block_placed(price: int, block: Block, fail: bool) -> void:
 	_play_state = PlayState.IDLE
 	
-	if fail:
-		true
+	if fail: return
 	
 	State.money -= price
 	

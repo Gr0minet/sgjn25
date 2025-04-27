@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0q0clfymrkbv" path="res://asset/sprites/age2/eglise1.png" id="2_7gemc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e67gr"]
-size = Vector2(207, 145)
+size = Vector2(206, 147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ychud"]
 size = Vector2(28, 139)
@@ -21,7 +21,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_7gemc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.5, 57.5)
+position = Vector2(-5, 58.5)
 shape = SubResource("RectangleShape2D_e67gr")
 
 [node name="StickZone" type="Area2D" parent="."]
